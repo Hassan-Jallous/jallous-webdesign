@@ -21,9 +21,9 @@ Alle Texte wurden nach Baulig Elite Training Prinzipien erarbeitet:
 
 **H1 Zeile 1:** Du machst nicht zu wenig Umsatz
 **H1 Zeile 2:** weil dein Angebot nicht gut genug ist. *(Chrome-Text-Gradient)*
-**H1 Zeile 3:** Sondern weil deine Website jeden abschreckt.
+**H1 Zeile 3:** Sondern weil deine Kunden dich googeln und bei deiner Konkurrenz landen.
 
-**Subheadline:** Sie googeln dich. Sie klicken. Sie sehen deine Seite — und gehen. Zu jemandem der vertrauenswürdiger aussieht. Jeden Tag. Und du merkst es nicht mal.
+**Subheadline:** Jeden Tag suchen Menschen genau das was du anbietest. Aber ohne einen Auftritt der Vertrauen schafft, rufen sie die Konkurrenz an. Nicht weil die besser sind. Sondern weil die online besser aussehen.
 
 **CTA Primary:** Kostenloses Erstgespräch sichern →
 **CTA Secondary:** Projekte ansehen
