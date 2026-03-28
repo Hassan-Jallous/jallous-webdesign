@@ -1,0 +1,2886 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jallous Webdesign | Premium Webdesign das verkauft</title>
+<meta name="description" content="Premium Webdesign das Vertrauen aufbaut und verkauft. Keine Templates. Jede Website individuell gebaut damit Kunden dich auswählen und nicht deine Konkurrenz.">
+<meta name="keywords" content="Webdesign, Premium Webdesign, Website erstellen lassen, Webdesigner Deutschland, Conversion Optimierung, Online Shop erstellen">
+<meta name="author" content="Hassan Jallous, Jallous Webdesign">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Jallous Webdesign | Premium Webdesign das verkauft">
+<meta property="og:description" content="Premium Webdesign das Vertrauen aufbaut und verkauft. Kunden verdoppeln ihr Investment in den ersten Monaten.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jallous-webdesign.de">
+<meta property="og:locale" content="de_DE">
+<link rel="icon" type="image/png" sizes="64x64" href="logos/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="logos/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Jallous Webdesign",
+  "description": "Premium Webdesign das Vertrauen aufbaut und verkauft.",
+  "url": "https://jallous-webdesign.de",
+  "founder": { "@type": "Person", "name": "Hassan Jallous" },
+  "areaServed": "DE",
+  "serviceType": "Web Design",
+  "priceRange": "$$"
+}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════
+   CLASH DISPLAY FONT
+   ═══════════════════════════════════════════════ */
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════════════
+   LIQUID CHROME @PROPERTY (for animated conic-gradient)
+   ═══════════════════════════════════════════════ */
+@property --chrome-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes chrome-border-rotate {
+  0% { --chrome-angle: 0deg; }
+  100% { --chrome-angle: 360deg; }
+}
+
+/* ═══════════════════════════════════════════════
+   CSS CUSTOM PROPERTIES — LIGHT MODE (DEFAULT)
+   ═══════════════════════════════════════════════ */
+:root {
+  --font-display: 'ClashDisplay', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --container-max: 1200px;
+  --container-padding: clamp(20px, 5vw, 40px);
+  --section-padding: clamp(80px, 12vw, 140px);
+  --card-radius: 20px;
+  --nav-height: 72px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Light mode colors */
+  --bg-primary: #f5f3ef;
+  --bg-secondary: #eceae5;
+  --glass-bg: rgba(255,255,255,0.5);
+  --glass-bg-hover: rgba(255,255,255,0.7);
+  --glass-border: rgba(0,0,0,0.12);
+  --glass-border-strong: rgba(0,0,0,0.22);
+  --glass-shadow: rgba(0,0,0,0.06);
+  --text-primary: #1a1a1a;
+  --text-secondary: rgba(0,0,0,0.55);
+  --text-muted: rgba(0,0,0,0.35);
+  --chrome-gradient: linear-gradient(135deg, #444 0%, #888 20%, #bbb 40%, #666 50%, #bbb 60%, #888 80%, #444 100%);
+  --chrome-text-gradient: linear-gradient(135deg, #555 0%, #999 20%, #bbb 40%, #777 50%, #bbb 60%, #999 80%, #555 100%);
+  --blur-amount: 20px;
+  --card-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+  --inset-glow: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.04);
+  --theme-icon: "☀️";
+  --progress-bg: rgba(0,0,0,0.08);
+  --progress-fill: linear-gradient(90deg, #555, #999);
+  --faq-hover: rgba(0,0,0,0.02);
+}
+
+/* ═══════════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111;
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-bg-hover: rgba(255,255,255,0.09);
+  --glass-border: rgba(255,255,255,0.1);
+  --glass-border-strong: rgba(255,255,255,0.18);
+  --glass-shadow: rgba(0,0,0,0.3);
+  --text-primary: #e8e8e8;
+  --text-secondary: rgba(255,255,255,0.5);
+  --text-muted: rgba(255,255,255,0.45);
+  --chrome-gradient: linear-gradient(135deg, #2a2a2a 0%, #555 15%, #888 25%, #ccc 35%, #fff 50%, #ccc 65%, #888 75%, #555 85%, #2a2a2a 100%);
+  --chrome-text-gradient: linear-gradient(135deg, #666 0%, #ccc 20%, #fff 40%, #999 50%, #fff 60%, #ccc 80%, #666 100%);
+  --blur-amount: 24px;
+  --card-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.2);
+  --card-shadow-hover: 0 16px 48px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+  --inset-glow: inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.2);
+  --progress-bg: rgba(255,255,255,0.08);
+  --progress-fill: linear-gradient(90deg, #888, #ddd);
+  --faq-hover: rgba(255,255,255,0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111;
+    --glass-bg: rgba(255,255,255,0.05);
+    --glass-bg-hover: rgba(255,255,255,0.09);
+    --glass-border: rgba(255,255,255,0.1);
+    --glass-border-strong: rgba(255,255,255,0.18);
+    --glass-shadow: rgba(0,0,0,0.3);
+    --text-primary: #e8e8e8;
+    --text-secondary: rgba(255,255,255,0.5);
+    --text-muted: rgba(255,255,255,0.45);
+      --chrome-gradient: linear-gradient(135deg, #2a2a2a 0%, #555 15%, #888 25%, #ccc 35%, #fff 50%, #ccc 65%, #888 75%, #555 85%, #2a2a2a 100%);
+    --chrome-text-gradient: linear-gradient(135deg, #666 0%, #ccc 20%, #fff 40%, #999 50%, #fff 60%, #ccc 80%, #666 100%);
+    --blur-amount: 24px;
+    --card-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.2);
+    --card-shadow-hover: 0 16px 48px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.3);
+    --inset-glow: inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.2);
+    --progress-bg: rgba(255,255,255,0.08);
+    --progress-fill: linear-gradient(90deg, #888, #ddd);
+    --faq-hover: rgba(255,255,255,0.02);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════════
+   BACKGROUND TEXTURE — Soft 3D Organic Waves
+   ═══════════════════════════════════════════════ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(0,180,220,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(255,160,50,0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(180,140,255,0.02) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle 600px at 30% 20%, rgba(255,255,255,0.3) 0%, transparent 60%),
+    radial-gradient(circle 400px at 70% 80%, rgba(255,255,255,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+[data-theme="dark"] body::before {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(0,212,255,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 70%, rgba(255,140,0,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 70% 50% at 50% 50%, rgba(0,255,170,0.02) 0%, transparent 70%);
+}
+
+[data-theme="dark"] body::after {
+  background:
+    radial-gradient(circle 500px at 30% 20%, rgba(255,255,255,0.01) 0%, transparent 60%),
+    radial-gradient(circle 300px at 70% 80%, rgba(255,255,255,0.008) 0%, transparent 60%);
+}
+
+/* ═══════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════ */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.section-headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* ═══════════════════════════════════════════════
+   GLASS ELEMENTS
+   ═══════════════════════════════════════════════ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border: 2px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow), var(--inset-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-strong);
+  box-shadow: var(--card-shadow-hover), var(--inset-glow);
+}
+
+
+/* Chrome text gradient */
+.chrome-text {
+  background: var(--chrome-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLL ANIMATIONS
+   ═══════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ═══════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+}
+
+.nav.scrolled {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 2px 20px var(--glass-shadow);
+}
+
+.nav-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.35em;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-letter {
+  display: inline-block;
+  background: var(--chrome-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
+  animation: letter-reveal 0.6s ease forwards, logo-shimmer 6s ease-in-out infinite;
+  opacity: 0;
+  transition: filter 0.4s ease;
+}
+
+.nav-logo:hover .logo-letter {
+  filter: contrast(1.5) brightness(0.7);
+}
+
+.logo-letter:nth-child(1) { animation-delay: 0.1s, 0s; }
+.logo-letter:nth-child(2) { animation-delay: 0.15s, 0s; }
+.logo-letter:nth-child(3) { animation-delay: 0.2s, 0s; }
+.logo-letter:nth-child(4) { animation-delay: 0.25s, 0s; }
+.logo-letter:nth-child(5) { animation-delay: 0.3s, 0s; }
+.logo-letter:nth-child(6) { animation-delay: 0.35s, 0s; }
+.logo-letter:nth-child(7) { animation-delay: 0.4s, 0s; }
+
+@keyframes letter-reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes logo-shimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Day/Night Scene Toggle ── */
+.theme-toggle {
+  position: relative;
+  width: 68px;
+  height: 34px;
+  border-radius: 999px;
+  border: 2px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  flex-shrink: 0;
+  transition: border-color 0.5s;
+}
+
+/* Track background — day sky */
+.theme-toggle .toggle-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #87CEEB 0%, #a8b8d8 40%, #7b9fd4 100%);
+  transition: background 0.5s ease;
+}
+
+[data-theme="dark"] .theme-toggle .toggle-track {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+}
+
+[data-theme="dark"] .theme-toggle {
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Clouds (day) — peeking from bottom-right */
+.theme-toggle .toggle-clouds {
+  position: absolute;
+  right: -2px;
+  bottom: -3px;
+  width: 30px;
+  height: 18px;
+  opacity: 1;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.theme-toggle .toggle-clouds::before,
+.theme-toggle .toggle-clouds::after {
+  content: '';
+  position: absolute;
+  background: rgba(255,255,255,0.95);
+  border-radius: 999px;
+}
+
+/* Main cloud body */
+.theme-toggle .toggle-clouds::before {
+  width: 24px;
+  height: 12px;
+  bottom: 0;
+  right: 0;
+}
+
+/* Cloud bump on top */
+.theme-toggle .toggle-clouds::after {
+  width: 14px;
+  height: 11px;
+  bottom: 6px;
+  right: 6px;
+}
+
+[data-theme="dark"] .theme-toggle .toggle-clouds {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* Stars (night) */
+.theme-toggle .toggle-stars {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity 0.4s 0.1s;
+}
+
+.theme-toggle .toggle-stars::before,
+.theme-toggle .toggle-stars::after {
+  content: '✦';
+  position: absolute;
+  color: rgba(255,255,255,0.85);
+  font-size: 6px;
+  line-height: 1;
+  text-shadow: 0 0 4px rgba(255,255,255,0.6);
+}
+
+.theme-toggle .toggle-stars::before {
+  top: 2px;
+  left: 2px;
+  font-size: 7px;
+  text-shadow: 0 0 6px rgba(255,255,255,0.7);
+}
+
+.theme-toggle .toggle-stars::after {
+  bottom: 2px;
+  left: 10px;
+  font-size: 5px;
+}
+
+/* Extra stars */
+.theme-toggle .toggle-star-extra {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s 0.2s;
+  box-shadow: 0 0 4px 1px rgba(255,255,255,0.15);
+  left: 16px;
+  top: 6px;
+}
+
+[data-theme="dark"] .theme-toggle .toggle-stars,
+[data-theme="dark"] .theme-toggle .toggle-star-extra {
+  opacity: 1;
+}
+
+/* Knob — sun/moon */
+.theme-toggle .toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%,
+    #fff5c0 0%,
+    #ffdc40 20%,
+    #f5a623 50%,
+    #e87a1e 80%,
+    #d4621a 100%
+  );
+  box-shadow:
+    0 0 12px 4px rgba(255,180,40,0.5),
+    0 0 24px 8px rgba(255,140,0,0.2),
+    0 2px 4px rgba(0,0,0,0.15),
+    inset 0 -3px 6px rgba(200,80,0,0.3),
+    inset 0 2px 4px rgba(255,240,180,0.6);
+  transition: transform 0.5s cubic-bezier(0.68,-0.15,0.27,1.15),
+              background 0.4s,
+              box-shadow 0.4s;
+  z-index: 2;
+}
+
+/* Moon state */
+[data-theme="dark"] .theme-toggle .toggle-knob {
+  transform: translateX(34px);
+  background: linear-gradient(145deg, #e0e0e0 0%, #c0c0c0 50%, #a0a0a0 100%);
+  box-shadow:
+    0 0 10px 3px rgba(220,220,240,0.25),
+    0 0 20px 6px rgba(200,200,230,0.12),
+    0 2px 4px rgba(0,0,0,0.3),
+    inset 0 -2px 4px rgba(100,100,100,0.3);
+}
+
+/* Moon craters */
+.theme-toggle .toggle-crater {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.08);
+  opacity: 0;
+  transition: opacity 0.4s 0.15s;
+}
+
+.theme-toggle .toggle-crater:nth-child(1) {
+  width: 6px; height: 6px; top: 6px; right: 5px;
+}
+
+.theme-toggle .toggle-crater:nth-child(2) {
+  width: 4px; height: 4px; bottom: 5px; left: 7px;
+}
+
+.theme-toggle .toggle-crater:nth-child(3) {
+  width: 3px; height: 3px; top: 12px; left: 5px;
+}
+
+[data-theme="dark"] .theme-toggle .toggle-crater {
+  opacity: 1;
+  background: rgba(0,0,0,0.12);
+}
+
+/* ── Nav CTA — same liquid chrome, smaller ── */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 999px;
+  position: relative;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  white-space: nowrap;
+  z-index: 1;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+
+  border: 3px solid transparent;
+  background:
+    linear-gradient(
+      rgba(245,243,239,0.92),
+      rgba(245,243,239,0.92)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #b0b0b0 0%, #d0d0d0 8%, #8a8a8a 16%, #555 24%,
+      #c0c0c0 32%, #d8d8d8 40%, #777 48%, #4a4a4a 56%,
+      #b5b5b5 64%, #d0d0d0 72%, #888 80%, #555 88%, #b0b0b0 100%
+    ) border-box;
+  animation: chrome-border-rotate 3s linear infinite;
+  box-shadow: var(--inset-glow), 0 0 8px rgba(180,180,180, 0.06);
+}
+
+/* Prismatic glow */
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from var(--chrome-angle),
+    transparent 0deg, rgba(0,200,255,0.15) 50deg, transparent 140deg,
+    rgba(255,140,0,0.12) 190deg, transparent 280deg,
+    rgba(130,100,255,0.1) 330deg, transparent 360deg
+  );
+  animation: chrome-border-rotate 3s linear infinite;
+  filter: blur(6px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--inset-glow), 0 0 16px rgba(200,200,200, 0.1);
+}
+
+.nav-cta:hover::before { opacity: 0.7; }
+
+[data-theme="dark"] .nav-cta {
+  background:
+    linear-gradient(
+      rgba(14,14,14,0.95),
+      rgba(14,14,14,0.95)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #222 0%, #fafafa 8%, #888 16%, #444 24%,
+      #ddd 32%, #fff 40%, #777 48%, #333 56%,
+      #ccc 64%, #fff 72%, #888 80%, #444 88%, #222 100%
+    ) border-box;
+}
+
+[data-theme="dark"] .nav-cta::before { opacity: 0.6; }
+
+/* Mobile hamburger */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--glass-border);
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 500;
+    padding: 0.6rem 0;
+    color: var(--text-primary);
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 56px;
+    height: 28px;
+  }
+
+  .theme-toggle .toggle-knob {
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    left: 2px;
+  }
+
+  [data-theme="dark"] .theme-toggle .toggle-knob {
+    transform: translateX(28px);
+  }
+
+  .theme-toggle .toggle-clouds {
+    right: -2px;
+    bottom: -2px;
+    width: 24px;
+    height: 14px;
+  }
+
+  .theme-toggle .toggle-clouds::before {
+    width: 20px;
+    height: 10px;
+  }
+
+  .theme-toggle .toggle-clouds::after {
+    width: 11px;
+    height: 9px;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .nav-links .nav-cta-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem 2.5rem;
+    margin-top: 1.5rem;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background:
+      linear-gradient(rgba(245,243,239,0.92), rgba(245,243,239,0.92)) padding-box,
+      conic-gradient(
+        from var(--chrome-angle),
+        #b0b0b0 0%, #d0d0d0 8%, #8a8a8a 16%, #555 24%,
+        #c0c0c0 32%, #d8d8d8 40%, #777 48%, #4a4a4a 56%,
+        #b5b5b5 64%, #d0d0d0 72%, #888 80%, #555 88%, #b0b0b0 100%
+      ) border-box;
+    animation: chrome-border-rotate 3s linear infinite;
+    position: relative;
+    z-index: 1;
+  }
+
+  [data-theme="dark"] .nav-links .nav-cta-mobile {
+    background:
+      linear-gradient(rgba(14,14,14,0.95), rgba(14,14,14,0.95)) padding-box,
+      conic-gradient(
+        from var(--chrome-angle),
+        #222 0%, #fafafa 8%, #888 16%, #444 24%,
+        #ddd 32%, #fff 40%, #777 48%, #333 56%,
+        #ccc 64%, #fff 72%, #888 80%, #444 88%, #222 100%
+      ) border-box;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-cta-mobile {
+    display: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════ */
+/* ── Liquid Chrome Button ──────────────────────
+   Uses padding-box/border-box trick for clean gradient border.
+   ::before = blurred prismatic glow behind the border.
+   ──────────────────────────────────────────────── */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 999px;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+
+  /* Transparent border reveals the conic-gradient underneath */
+  border: 3.5px solid transparent;
+
+  /* Near-opaque inner fill hides gradient in center, border stays chrome */
+  background:
+    linear-gradient(
+      rgba(245,243,239,0.92),
+      rgba(245,243,239,0.92)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #b0b0b0 0%,
+      #d0d0d0 8%,
+      #8a8a8a 16%,
+      #555    24%,
+      #c0c0c0 32%,
+      #d8d8d8 40%,
+      #777    48%,
+      #4a4a4a 56%,
+      #b5b5b5 64%,
+      #d0d0d0 72%,
+      #888    80%,
+      #555    88%,
+      #b0b0b0 100%
+    ) border-box;
+
+  animation: chrome-border-rotate 3s linear infinite;
+
+  box-shadow:
+    var(--inset-glow),
+    0 0 12px rgba(180,180,180, 0.08),
+    0 0 4px rgba(255,255,255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Prismatic glow aura ── */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from var(--chrome-angle),
+    transparent 0deg,
+    rgba(0,200,255,0.2) 50deg,
+    rgba(0,160,255,0.12) 100deg,
+    transparent 140deg,
+    rgba(255,140,0,0.18) 190deg,
+    rgba(255,80,40,0.1) 240deg,
+    transparent 280deg,
+    rgba(130,100,255,0.12) 330deg,
+    transparent 360deg
+  );
+  animation: chrome-border-rotate 3s linear infinite;
+  filter: blur(10px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    var(--inset-glow),
+    0 0 24px rgba(200,200,200, 0.15),
+    0 8px 30px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover::before {
+  opacity: 0.85;
+}
+
+/* ── Dark mode: more contrast in chrome ── */
+[data-theme="dark"] .btn-primary {
+  background:
+    linear-gradient(
+      rgba(14,14,14,0.95),
+      rgba(14,14,14,0.95)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #222 0%,
+      #fafafa 8%,
+      #888 16%,
+      #444 24%,
+      #ddd 32%,
+      #fff 40%,
+      #777 48%,
+      #333 56%,
+      #ccc 64%,
+      #fff 72%,
+      #888 80%,
+      #444 88%,
+      #222 100%
+    ) border-box;
+  box-shadow:
+    var(--inset-glow),
+    0 0 16px rgba(255,255,255, 0.06),
+    0 0 4px rgba(255,255,255, 0.03);
+}
+
+[data-theme="dark"] .btn-primary::before {
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow:
+    var(--inset-glow),
+    0 0 30px rgba(255,255,255, 0.12),
+    0 8px 30px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1.5px solid var(--glass-border);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.btn-secondary:hover {
+  color: var(--text-primary);
+  border-color: var(--glass-border-strong);
+}
+
+[data-theme="dark"] .btn-secondary {
+  border-color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.75);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 3rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline .chrome-line {
+  background: var(--chrome-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 540px;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-trust span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.trust-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.hero-capacity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.capacity-bar {
+  flex-shrink: 0;
+  width: 120px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--progress-bg);
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .hero-capacity {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .capacity-bar { width: 100%; }
+}
+
+.capacity-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #777, #aaa, #d0d0d0, #999, #bbb, #888);
+  background-size: 200% 100%;
+  animation: chrome-bar-sweep 3s ease-in-out infinite;
+  transition: width 1.8s var(--ease-out-expo) 0.6s;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes chrome-bar-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+[data-theme="dark"] .capacity-fill {
+  background: linear-gradient(90deg, #555, #999, #eee, #bbb, #ddd, #888, #555);
+  background-size: 200% 100%;
+}
+
+.capacity-fill.animated {
+  width: 63.6%;
+}
+
+/* ── Hero Visual (right side) ── */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-portrait {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  margin-top: -80px;
+}
+
+.hero-portrait {
+  -webkit-mask-image: linear-gradient(to top, transparent 0px, black 20px);
+  mask-image: linear-gradient(to top, transparent 0px, black 20px);
+}
+
+.hero-portrait-dark {
+  display: none;
+}
+[data-theme="dark"] .hero-portrait-light { display: none; }
+[data-theme="dark"] .hero-portrait-dark { display: block; }
+
+/* Desktop mockup frame */
+.mockup-desktop {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  border: 2px solid var(--glass-border-strong);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.mockup-desktop-topbar {
+  height: 28px;
+  background: rgba(0,0,0,0.04);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 6px;
+}
+
+[data-theme="dark"] .mockup-desktop-topbar {
+  background: rgba(255,255,255,0.04);
+}
+
+.mockup-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.mockup-dot:nth-child(1) { background: #ff5f57; }
+.mockup-dot:nth-child(2) { background: #febc2e; }
+.mockup-dot:nth-child(3) { background: #28c840; }
+
+.mockup-screen {
+  width: 100%;
+  height: calc(100% - 28px);
+  background: linear-gradient(145deg, #111 0%, #1a1a2e 50%, #0d0d15 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.15);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* Mobile mockup floating on top */
+.mockup-mobile {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  aspect-ratio: 9/19;
+  border-radius: 16px;
+  border: 2px solid var(--glass-border-strong);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.mockup-mobile-notch {
+  width: 50%;
+  height: 14px;
+  margin: 6px auto 0;
+  border-radius: 0 0 8px 8px;
+  background: rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .mockup-mobile-notch {
+  background: rgba(255,255,255,0.06);
+}
+
+.mockup-mobile-screen {
+  width: 100%;
+  height: calc(100% - 20px);
+  background: linear-gradient(145deg, #111 0%, #1a1a2e 50%, #0d0d15 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.12);
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* ── Hero Marquee (mobile only) ── */
+.hero-marquee {
+  display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .hero-marquee {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-marquee::before,
+  .hero-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-primary) 0%, transparent 100%);
+  }
+
+  .hero-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-primary) 0%, transparent 100%);
+  }
+
+  .hero-visual {
+    overflow: visible;
+    min-height: 320px;
+  }
+
+  .hero-portrait {
+    position: relative;
+    z-index: 2;
+  }
+
+  .marquee-row {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+  }
+
+  .marquee-left .marquee-track {
+    animation: marqueeLeft 30s linear infinite;
+  }
+
+  .marquee-right .marquee-track {
+    animation: marqueeRight 30s linear infinite;
+  }
+
+  .marquee-track img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    flex-shrink: 0;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+
+  @keyframes marqueeLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes marqueeRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+}
+
+/* Mobile: stack hero columns */
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-visual {
+    order: -1;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .hero-portrait {
+    margin-top: 0;
+    max-width: 294px;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   SYSTEM SECTION (3 REASONS)
+   ═══════════════════════════════════════════════ */
+.system-section {
+  padding: var(--section-padding) 0;
+}
+
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.system-card {
+  padding: 2.5rem 2rem;
+  transition: transform 0.3s var(--ease-out-expo), background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.system-card:hover {
+  transform: translateY(-4px);
+}
+
+.system-card .card-number {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.system-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.system-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .system-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .system-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   PORTFOLIO SECTION
+   ═══════════════════════════════════════════════ */
+.portfolio-section {
+  padding: var(--section-padding) 0;
+}
+
+.portfolio-featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.featured-card {
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+}
+
+.featured-image {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-image-bellucci {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 60%, #533483 100%);
+}
+
+.featured-image-elsalam {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 30%, #1f6feb33 60%, #238636 100%);
+}
+
+.featured-image .image-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+.featured-content {
+  padding: 2rem 2.5rem 2.5rem;
+}
+
+.featured-content h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.featured-content .featured-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+
+.featured-detail {
+  margin-bottom: 1rem;
+}
+
+.featured-detail strong {
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.featured-detail p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.featured-result {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+}
+
+.featured-result .chrome-text {
+  font-weight: 700;
+}
+
+@media (min-width: 769px) {
+  .portfolio-featured {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Smaller portfolio cards */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.portfolio-card {
+  padding: 1.8rem 1.5rem;
+  transition: transform 0.3s var(--ease-out-expo), background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-3px);
+}
+
+.portfolio-card h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.portfolio-card .portfolio-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.portfolio-card .portfolio-link:hover {
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════
+   ABOUT SECTION
+   ═══════════════════════════════════════════════ */
+.about-section {
+  padding: var(--section-padding) 0;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.about-photo {
+  width: 280px;
+  height: 340px;
+  border-radius: var(--card-radius);
+  background: linear-gradient(135deg, var(--glass-bg), var(--glass-bg-hover));
+  border: 2px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.about-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-stat {
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 280px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .about-stats {
+    gap: 0.8rem;
+  }
+
+  .about-stat {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   FAQ SECTION
+   ═══════════════════════════════════════════════ */
+.faq-section {
+  padding: var(--section-padding) 0;
+}
+
+.faq-list {
+  margin-top: 2.5rem;
+  max-width: 800px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-align: left;
+  transition: color 0.3s;
+  gap: 1rem;
+}
+
+.faq-question:hover {
+  color: var(--text-secondary);
+}
+
+.faq-icon {
+  font-size: 1.3rem;
+  font-weight: 300;
+  transition: transform 0.3s var(--ease-out-expo);
+  flex-shrink: 0;
+  color: var(--text-muted);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out-expo), padding 0.3s;
+}
+
+.faq-answer-inner {
+  padding: 0 0 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+/* ═══════════════════════════════════════════════
+   FINAL CTA SECTION
+   ═══════════════════════════════════════════════ */
+.final-cta-section {
+  padding: var(--section-padding) 0;
+  text-align: center;
+}
+
+.final-cta-section .section-headline {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.final-capacity {
+  margin: 2rem auto 0;
+  max-width: 400px;
+}
+
+.final-capacity-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ═══════════════════════════════════════════════
+   BEWERBUNGSFORMULAR (APPLICATION FORM)
+   ═══════════════════════════════════════════════ */
+.form-section {
+  padding: var(--section-padding) 0;
+}
+
+.form-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.form-glass {
+  padding: 3rem 2.5rem;
+}
+
+.form-intro {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Step indicators */
+.form-steps-indicator {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.step-dot {
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--progress-bg);
+  transition: background 0.4s;
+}
+
+.step-dot.active {
+  background: var(--progress-fill);
+}
+
+.step-dot.completed {
+  background: var(--text-muted);
+}
+
+/* Form steps */
+.form-step {
+  display: none;
+  animation: fadeInStep 0.4s var(--ease-out-expo);
+}
+
+.form-step.active {
+  display: block;
+}
+
+@keyframes fadeInStep {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-step-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.form-step h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid var(--glass-border);
+  border-radius: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: var(--glass-border-strong);
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  padding-right: 2.5rem;
+}
+
+/* Radio/option buttons for form */
+.form-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.form-option {
+  padding: 0.9rem 1.2rem;
+  border-radius: 14px;
+  border: 2px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+  user-select: none;
+}
+
+.form-option:hover,
+.form-option.selected {
+  border-color: var(--glass-border-strong);
+  color: var(--text-primary);
+  background: var(--glass-bg-hover);
+}
+
+.form-option input {
+  display: none;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .btn-arrow { display: none; }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.form-back {
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  border-radius: 999px;
+}
+
+.form-back:hover {
+  color: var(--text-primary);
+}
+
+.form-next {
+  padding: 0.8rem 1.8rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid var(--glass-border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-next:hover {
+  background: var(--glass-bg-hover);
+  transform: translateY(-1px);
+}
+
+/* Website URL conditional field */
+.conditional-field {
+  display: none;
+  margin-top: 1rem;
+}
+
+.conditional-field.visible {
+  display: block;
+}
+
+/* Form success */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.form-success.active {
+  display: block;
+}
+
+.form-success h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.form-success p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════ */
+.footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  background: var(--chrome-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+.footer-cta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-cta:hover {
+  color: var(--text-secondary);
+}
+
+.footer-legal {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+.footer-legal a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE REFINEMENTS
+   ═══════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-trust {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .trust-dot {
+    display: none;
+  }
+
+  .form-glass {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: calc(var(--nav-height) + 1rem);
+    min-height: auto;
+    padding-bottom: 4rem;
+  }
+
+  .section-headline {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+
+  .featured-image {
+    height: 200px;
+  }
+
+  .featured-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span class="logo-letter">J</span><span class="logo-letter">A</span><span class="logo-letter">L</span><span class="logo-letter">L</span><span class="logo-letter">O</span><span class="logo-letter">U</span><span class="logo-letter">S</span></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#ergebnisse" onclick="closeMenu()">Ergebnisse</a></li>
+      <li><a href="#ueber-mich" onclick="closeMenu()">Über mich</a></li>
+      <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+      <li><a href="#bewerbung" class="nav-cta-mobile" onclick="closeMenu()">Erstgespräch sichern <span class="btn-arrow">→</span></a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+        <span class="toggle-track"></span>
+        <span class="toggle-clouds"></span>
+        <span class="toggle-stars"></span>
+        <span class="toggle-star-extra"></span>
+        <span class="toggle-knob">
+          <span class="toggle-crater"></span>
+          <span class="toggle-crater"></span>
+          <span class="toggle-crater"></span>
+        </span>
+      </button>
+      <a href="#bewerbung" class="nav-cta nav-cta-desktop">Erstgespräch sichern <span class="btn-arrow">→</span></a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Left: Text -->
+      <div class="hero-text">
+        <div class="hero-label reveal">PREMIUM WEBDESIGN</div>
+
+        <h1 class="hero-headline reveal reveal-delay-1">
+          Du machst nicht zu wenig Umsatz
+          <span class="chrome-line">weil dein Angebot nicht gut genug ist.</span>
+          Sondern weil deine Website jeden abschreckt.
+        </h1>
+
+        <p class="hero-sub reveal reveal-delay-2">
+          Sie googeln dich. Sie klicken. Sie sehen deine Seite und gehen. Zu jemandem der vertrauenswürdiger aussieht. Jeden Tag. Und du merkst es nicht mal.
+        </p>
+
+        <div class="hero-buttons reveal reveal-delay-3">
+          <a href="#bewerbung" class="btn-primary">Unverbindliches Erstgespräch sichern <span class="btn-arrow">→</span></a>
+          <a href="#ergebnisse" class="btn-secondary">Projekte ansehen</a>
+        </div>
+
+      </div>
+
+      <!-- Right: Hassan Portrait -->
+      <div class="hero-visual reveal reveal-delay-2">
+        <!-- Marquee Background (mobile only) -->
+        <div class="hero-marquee">
+          <div class="marquee-row marquee-left">
+            <div class="marquee-track">
+              <img src="projects/projekt-01.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-02.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-03.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-04.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-05.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-06.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-07.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-08.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-09.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-10.jpg" alt="" loading="lazy">
+              <!-- Duplicate for seamless loop -->
+              <img src="projects/projekt-01.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-02.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-03.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-04.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-05.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-06.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-07.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-08.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-09.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-10.jpg" alt="" loading="lazy">
+            </div>
+          </div>
+          <div class="marquee-row marquee-right">
+            <div class="marquee-track">
+              <img src="projects/projekt-04.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-05.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-06.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-07.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-08.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-09.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-10.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-01.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-02.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-03.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-04.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-05.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-06.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-07.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-08.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-09.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-10.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-01.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-02.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-03.jpg" alt="" loading="lazy">
+            </div>
+          </div>
+          <div class="marquee-row marquee-left">
+            <div class="marquee-track">
+              <img src="projects/projekt-10.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-09.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-08.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-07.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-06.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-05.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-04.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-03.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-02.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-01.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-10.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-09.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-08.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-07.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-06.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-05.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-04.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-03.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-02.jpg" alt="" loading="lazy">
+              <img src="projects/projekt-01.jpg" alt="" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <img src="hassan-hero-light.png" alt="Hassan Jallous – Premium Webdesign" class="hero-portrait hero-portrait-light">
+        <img src="hassan-hero.png" alt="Hassan Jallous – Premium Webdesign" class="hero-portrait hero-portrait-dark">
+      </div>
+    </div>
+
+    <!-- Full width under grid -->
+    <div class="hero-trust reveal reveal-delay-4">
+      <span>50+ Projekte umgesetzt</span>
+      <span class="trust-dot"></span>
+      <span>Kunden verdoppeln ihr Investment in den ersten Monaten</span>
+      <span class="trust-dot"></span>
+      <span>Made in Germany</span>
+    </div>
+
+    <div class="hero-capacity reveal reveal-delay-5">
+      <span class="capacity-text">Kapazität Q2 2026: <strong>7/11</strong> Projekten vergeben, noch <strong>4 Plätze</strong> frei</span>
+      <div class="capacity-bar">
+        <div class="capacity-fill"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SYSTEM SECTION — 3 REASONS
+     ═══════════════════════════════════════════════ -->
+<section class="system-section" id="system">
+  <div class="container">
+    <div class="section-label reveal">SO FUNKTIONIERT ES</div>
+    <h2 class="section-headline reveal">Warum meine Kunden ihr Investment<br>in den ersten Monaten zurückverdienen.</h2>
+
+    <div class="system-grid">
+      <div class="system-card glass reveal reveal-delay-1">
+        <div class="card-number">GRUND 01</div>
+        <h3>Weil ich nicht rate sondern frage.</h3>
+        <p>Die meisten Websites werden gebaut ohne zu wissen was die Kunden überhaupt sehen wollen. Deshalb funktionieren sie nicht. Ich finde zuerst raus was deine Kunden brauchen um dir zu vertrauen. Bevor eine einzige Zeile geschrieben wird.</p>
+      </div>
+
+      <div class="system-card glass reveal reveal-delay-2">
+        <div class="card-number">GRUND 02</div>
+        <h3>Weil die Website verkauft, nicht nur existiert.</h3>
+        <p>Deine neue Website baut Vertrauen auf bevor du ein Wort sagst. Kunden sehen deine Seite und denken: hier bin ich richtig. Das ist der Unterschied zwischen einer Website die Geld kostet und einer die Geld bringt. Einer meiner Kunden hat mit seiner neuen Website in 4 Monaten über 10.000€ MEHR Umsatz gemacht, nur durch Besucher die sowieso schon da waren.</p>
+      </div>
+
+      <div class="system-card glass reveal reveal-delay-3">
+        <div class="card-number">GRUND 03</div>
+        <h3>Weil ich nach dem Launch nicht verschwinde.</h3>
+        <p>Deine Konkurrenz investiert gerade in ihren Auftritt. Wer stehen bleibt verliert Kunden. Nicht irgendwann, sondern jeden Monat. Deshalb betreue ich deine Website nach dem Launch weiter. Neue Inhalte, neue Optimierungen, immer angepasst an das was gerade funktioniert.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     PORTFOLIO SECTION
+     ═══════════════════════════════════════════════ -->
+<section class="portfolio-section" id="ergebnisse">
+  <div class="container">
+    <div class="section-label reveal">ERGEBNISSE</div>
+    <h2 class="section-headline reveal">Nicht meine Worte. Meine Ergebnisse.</h2>
+
+    <!-- Featured projects -->
+    <div class="portfolio-featured">
+      <div class="featured-card glass reveal reveal-delay-1">
+        <div class="featured-image featured-image-bellucci">
+          <span class="image-label">Desktop & Mobile Mockup</span>
+        </div>
+        <div class="featured-content">
+          <h3>Bellucci</h3>
+          <div class="featured-subtitle">Fine Dining am Kurfürstendamm, Berlin</div>
+
+          <div class="featured-detail">
+            <strong>Problem</strong>
+            <p>Ein Restaurant auf 9.5/10 Niveau, mit einer Website auf 3.5/10. Kunden googeln "Bellucci Berlin", sehen die Seite und fragen sich: ist das wirklich so gut?</p>
+          </div>
+          <div class="featured-detail">
+            <strong>Lösung</strong>
+            <p>Neue Website die das Niveau des Restaurants widerspiegelt. Premium Look, Reservierung, Speisekarte, alles auf dem Level das die Gäste erwarten.</p>
+          </div>
+          <div class="featured-detail">
+            <strong>Ergebnis</strong>
+            <p>10-40k€ Umsatz über Feiertage via Google Ads dank der neuen Webpräsenz.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-card glass reveal reveal-delay-2">
+        <div class="featured-image featured-image-elsalam">
+          <span class="image-label">Umsatz-Chart + Mockup</span>
+        </div>
+        <div class="featured-content">
+          <h3>El-Salam</h3>
+          <div class="featured-subtitle">Online Shop</div>
+
+          <div class="featured-detail">
+            <strong>Problem</strong>
+            <p>Ein Shop der alle 3 Monate vielleicht 50€ Umsatz macht. Die Produkte waren gut, die Website hat sie nicht verkauft.</p>
+          </div>
+          <div class="featured-detail">
+            <strong>Lösung</strong>
+            <p>Neuer Shop von Grund auf. Vertrauen aufbauen, Produkte richtig präsentieren, Bestellprozess vereinfachen.</p>
+          </div>
+          <div class="featured-result">
+            <span class="chrome-text">+3.874% Wachstum</span> 10.000€+ Umsatz in 4 Monaten. 211 Bestellungen. Ohne einen Cent in Werbung.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Smaller cards -->
+    <div class="portfolio-grid">
+      <div class="portfolio-card glass reveal">
+        <h4>Staubflüsterer</h4>
+        <p>Reinigungsfirma. Frisch gegründet. Null Kunden, null Vertrauen. Die Website sieht aus als wären sie seit Jahren erfolgreich am Markt. 5/5 Sterne, professioneller Auftritt vom ersten Tag.</p>
+        <a href="https://staubflüsterer.de" target="_blank" rel="noopener" class="portfolio-link">staubflüsterer.de →</a>
+      </div>
+
+      <div class="portfolio-card glass reveal reveal-delay-1">
+        <h4>Stage-Code</h4>
+        <p>Eventfirma. Alte Website hat Kunden verjagt. Komplett neues Branding und Website. Jetzt sieht man sofort: die wissen was sie tun.</p>
+        <a href="https://stage-code.com" target="_blank" rel="noopener" class="portfolio-link">stage-code.com →</a>
+      </div>
+
+      <div class="portfolio-card glass reveal reveal-delay-2">
+        <h4>MSD Autowelt</h4>
+        <p>EU Autohändler. Website von 2/10 auf 9/10. Der gleiche Händler, komplett anderes Vertrauen.</p>
+        <a href="https://msdautowelt.com" target="_blank" rel="noopener" class="portfolio-link">msdautowelt.com →</a>
+      </div>
+
+      <div class="portfolio-card glass reveal reveal-delay-3">
+        <h4>Shatleh</h4>
+        <p>B2B Bestell-Webapp. Orientalischer Lebensmittel-Großhandel. Komplettes Bestellsystem für Supermärkte, Kiosks und Gastronomie.</p>
+        <a href="https://shatleh.de" target="_blank" rel="noopener" class="portfolio-link">shatleh.de →</a>
+      </div>
+
+      <div class="portfolio-card glass reveal reveal-delay-4">
+        <h4>Vitara Skin</h4>
+        <p>Beauty E-Commerce. Premium Shopify Shop für eine Beauty Brand. Vergleichbare Shops in der Nische machen 200-400k€ monatlich. Frisch live.</p>
+        <a href="https://vitaraskin.com" target="_blank" rel="noopener" class="portfolio-link">vitaraskin.com →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ÜBER MICH SECTION
+     ═══════════════════════════════════════════════ -->
+<section class="about-section" id="ueber-mich">
+  <div class="container">
+    <h2 class="section-headline reveal">Guter Auftritt ist kein Luxus.<br>Er entscheidet ob jemand bei dir kauft.</h2>
+
+    <div class="about-layout">
+      <div class="about-photo reveal">
+        FOTO
+      </div>
+
+      <div class="about-text reveal reveal-delay-1">
+        <p>Überall das gleiche Bild: Selbstständige die geile Arbeit machen, aber online sieht es keiner. Oder schlimmer, man sieht es und vertraut dem Laden nicht.</p>
+
+        <p>Das hat mich nicht losgelassen. Also habe ich angefangen Websites zu bauen. Nicht die schönen die nichts bringen. Sondern die wo Monate später der Anruf kommt: „Hassan, seit der neuen Website läuft es."</p>
+
+        <p>Einer meiner Kunden hat damit in 4 Monaten über 10.000€ mehr Umsatz gemacht. Ein Fine Dining Restaurant am Kurfürstendamm hat endlich eine Website die zu seinem Niveau passt. Ein Reinigungsunternehmen sieht vom ersten Tag an aus als wären sie seit Jahren am Markt.</p>
+
+        <p>Dieser Ruf ist alles was ich habe. Deshalb sage ich lieber nein als schlechte Arbeit abzuliefern. Weil ein schlechtes Wort über mich zerstört zehn gute.</p>
+
+        <div class="about-stats">
+          <div class="about-stat glass">50+ Projekte</div>
+          <div class="about-stat glass">7 Branchen</div>
+          <div class="about-stat glass">2x Investment zurück</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FAQ SECTION
+     ═══════════════════════════════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-label reveal">FAQ</div>
+    <h2 class="section-headline reveal">Häufig gestellte Fragen</h2>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Was kostet das?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Kommt auf dein Projekt an. Im Erstgespräch finden wir raus was du brauchst und du bekommst ein klares Angebot.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" aria-expanded="false">
+          Wie lange dauert es?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Die meisten Projekte sind in 2-4 Wochen fertig. Kommt auf den Umfang an.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" aria-expanded="false">
+          Bringt mir eine neue Website wirklich mehr Kunden?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Einer meiner Kunden hat vorher kaum Umsatz über seine Website gemacht. Nach dem Relaunch: über 10.000€ in 4 Monaten. Eine Website die Vertrauen aufbaut verändert was reinkommt.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-question" aria-expanded="false">
+          Muss ich mich nach dem Launch selbst um alles kümmern?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Nein. Ich betreue deine Website weiter. Updates, Änderungen, Optimierungen, du musst dich um nichts kümmern.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-4">
+        <button class="faq-question" aria-expanded="false">
+          Ich hab gerade nicht das Budget dafür.
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Dann ist jetzt vielleicht nicht der richtige Zeitpunkt. Aber überleg dir was dich deine jetzige Website jeden Monat kostet an Kunden die du nicht bekommst. Manchmal ist warten teurer als investieren.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FINAL CTA SECTION
+     ═══════════════════════════════════════════════ -->
+<section class="final-cta-section">
+  <div class="container">
+    <h2 class="section-headline reveal">Jeden Tag ohne eine Website die verkauft<br>ist ein Tag ohne Umsatz.</h2>
+    <p class="final-cta-sub reveal reveal-delay-1">Im Erstgespräch schaue ich mir deine Situation an und sage dir ehrlich ob und wie ich dir helfen kann.</p>
+    <div class="reveal reveal-delay-2">
+      <a href="#bewerbung" class="btn-primary">Erstgespräch sichern <span class="btn-arrow">→</span></a>
+    </div>
+    <div class="final-capacity reveal reveal-delay-3">
+      <div class="final-capacity-text">Kapazität Q2 2026: 7/11 Projekten vergeben</div>
+      <div class="capacity-bar">
+        <div class="capacity-fill"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     BEWERBUNGSFORMULAR
+     ═══════════════════════════════════════════════ -->
+<section class="form-section" id="bewerbung">
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="form-glass glass" id="applicationForm">
+        <p class="form-intro">Damit ich einschätzen kann ob und wie ich dir helfen kann, beantworte mir kurz ein paar Fragen.</p>
+
+        <div class="form-steps-indicator" id="stepsIndicator">
+          <div class="step-dot active"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+        </div>
+
+        <!-- Step 1: Name -->
+        <div class="form-step active" data-step="1">
+          <div class="form-step-label">SCHRITT 1 VON 6</div>
+          <h3>Wie heißt du?</h3>
+          <input type="text" class="form-input" id="formName" placeholder="Dein Name" autocomplete="name">
+          <div class="form-nav">
+            <div></div>
+            <button class="form-next" onclick="nextStep(2)">Weiter →</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Branche -->
+        <div class="form-step" data-step="2">
+          <div class="form-step-label">SCHRITT 2 VON 6</div>
+          <h3>In welcher Branche bist du?</h3>
+          <div class="form-options" id="brancheOptions">
+            <label class="form-option" onclick="selectOption(this, 'brancheOptions')">
+              <input type="radio" name="branche" value="Restaurant/Gastro">Restaurant / Gastro
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'brancheOptions')">
+              <input type="radio" name="branche" value="Handwerk">Handwerk
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'brancheOptions')">
+              <input type="radio" name="branche" value="Dienstleistung">Dienstleistung
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'brancheOptions')">
+              <input type="radio" name="branche" value="E-Commerce/Shop">E-Commerce / Shop
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'brancheOptions')">
+              <input type="radio" name="branche" value="Agentur">Agentur
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'brancheOptions')">
+              <input type="radio" name="branche" value="Sonstiges">Sonstiges
+            </label>
+          </div>
+          <div class="form-nav">
+            <button class="form-back" onclick="prevStep(1)">← Zurück</button>
+            <button class="form-next" onclick="nextStep(3)">Weiter →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Website vorhanden? -->
+        <div class="form-step" data-step="3">
+          <div class="form-step-label">SCHRITT 3 VON 6</div>
+          <h3>Hast du schon eine Website?</h3>
+          <div class="form-options" id="websiteOptions">
+            <label class="form-option" onclick="selectOption(this, 'websiteOptions'); showWebsiteUrl(true)">
+              <input type="radio" name="hasWebsite" value="Ja">Ja
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'websiteOptions'); showWebsiteUrl(false)">
+              <input type="radio" name="hasWebsite" value="Nein">Nein
+            </label>
+          </div>
+          <div class="conditional-field" id="websiteUrlField">
+            <input type="url" class="form-input" id="formWebsiteUrl" placeholder="Deine Website-URL">
+          </div>
+          <div class="form-nav">
+            <button class="form-back" onclick="prevStep(2)">← Zurück</button>
+            <button class="form-next" onclick="nextStep(4)">Weiter →</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Problem -->
+        <div class="form-step" data-step="4">
+          <div class="form-step-label">SCHRITT 4 VON 6</div>
+          <h3>Was ist gerade dein größtes Problem mit deinem Online-Auftritt?</h3>
+          <textarea class="form-input" id="formProblem" placeholder="Erzähl mir davon..."></textarea>
+          <div class="form-nav">
+            <button class="form-back" onclick="prevStep(3)">← Zurück</button>
+            <button class="form-next" onclick="nextStep(5)">Weiter →</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Umsatz + Kundengewinnung -->
+        <div class="form-step" data-step="5">
+          <div class="form-step-label">SCHRITT 5 VON 6</div>
+          <h3>Wie viel Umsatz machst du gerade im Monat?</h3>
+          <div class="form-options" id="umsatzOptions" style="margin-bottom: 1.5rem;">
+            <label class="form-option" onclick="selectOption(this, 'umsatzOptions')">
+              <input type="radio" name="umsatz" value="Unter 5.000€">Unter 5.000€
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'umsatzOptions')">
+              <input type="radio" name="umsatz" value="5.000-15.000€">5.000 - 15.000€
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'umsatzOptions')">
+              <input type="radio" name="umsatz" value="15.000-50.000€">15.000 - 50.000€
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'umsatzOptions')">
+              <input type="radio" name="umsatz" value="Über 50.000€">Über 50.000€
+            </label>
+          </div>
+
+          <h3 style="margin-top: 0.5rem;">Wie erreichst du gerade deine Kunden?</h3>
+          <div class="form-options" id="kundenOptions">
+            <label class="form-option" onclick="selectOption(this, 'kundenOptions')">
+              <input type="radio" name="kunden" value="Mund zu Mund">Mund zu Mund
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'kundenOptions')">
+              <input type="radio" name="kunden" value="Social Media">Social Media
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'kundenOptions')">
+              <input type="radio" name="kunden" value="Google">Google
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'kundenOptions')">
+              <input type="radio" name="kunden" value="Werbung">Werbung
+            </label>
+            <label class="form-option" onclick="selectOption(this, 'kundenOptions')">
+              <input type="radio" name="kunden" value="Gar nicht richtig">Gar nicht richtig
+            </label>
+          </div>
+          <div class="form-nav">
+            <button class="form-back" onclick="prevStep(4)">← Zurück</button>
+            <button class="form-next" onclick="nextStep(6)">Weiter →</button>
+          </div>
+        </div>
+
+        <!-- Step 6: Kontakt -->
+        <div class="form-step" data-step="6">
+          <div class="form-step-label">SCHRITT 6 VON 6</div>
+          <h3>Wie kann ich dich erreichen?</h3>
+          <div class="form-row">
+            <input type="email" class="form-input" id="formEmail" placeholder="E-Mail Adresse" autocomplete="email">
+            <input type="tel" class="form-input" id="formPhone" placeholder="Telefonnummer" autocomplete="tel">
+          </div>
+          <div class="form-nav">
+            <button class="form-back" onclick="prevStep(5)">← Zurück</button>
+            <button class="form-next" onclick="submitForm()">Absenden →</button>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="form-success" id="formSuccess">
+          <h3>Danke!</h3>
+          <p>Ich schaue mir deine Angaben an und melde mich in den nächsten 24-48 Stunden bei dir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">JALLOUS</a>
+      <a href="#bewerbung" class="footer-cta">Erstgespräch sichern <span class="btn-arrow">→</span></a>
+    </div>
+    <div class="footer-legal">
+      © 2026 Jallous Webdesign · Cortex Made LLC · <a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGBs</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════════ -->
+<script>
+/* ─── Theme Toggle ─── */
+(function() {
+  const html = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const stored = localStorage.getItem('theme');
+
+  if (stored) {
+    html.setAttribute('data-theme', stored);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    html.setAttribute('data-theme', 'dark');
+  }
+
+  toggle.addEventListener('click', function() {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
+
+/* ─── Nav scroll effect ─── */
+(function() {
+  const nav = document.getElementById('nav');
+  let ticking = false;
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+/* ─── Mobile menu ─── */
+const navHamburger = document.getElementById('navHamburger');
+const navLinks = document.getElementById('navLinks');
+
+navHamburger.addEventListener('click', function() {
+  this.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+
+function closeMenu() {
+  navHamburger.classList.remove('active');
+  navLinks.classList.remove('open');
+}
+
+/* ─── Intersection Observer for scroll reveals ─── */
+(function() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('visible');
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  /* Capacity bar fill animation */
+  var capObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        capObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.capacity-fill').forEach(function(el) {
+    capObserver.observe(el);
+  });
+})();
+
+/* ─── FAQ Accordion ─── */
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.parentElement;
+    const isActive = item.classList.contains('active');
+
+    // Close all
+    document.querySelectorAll('.faq-item.active').forEach(function(openItem) {
+      openItem.classList.remove('active');
+      openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    // Open clicked if wasn't active
+    if (!isActive) {
+      item.classList.add('active');
+      this.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ─── Bewerbungsformular ─── */
+var currentStep = 1;
+var totalSteps = 6;
+
+function updateStepIndicator() {
+  var dots = document.querySelectorAll('.step-dot');
+  dots.forEach(function(dot, i) {
+    dot.classList.remove('active', 'completed');
+    if (i + 1 === currentStep) {
+      dot.classList.add('active');
+    } else if (i + 1 < currentStep) {
+      dot.classList.add('completed');
+    }
+  });
+}
+
+function showStep(step) {
+  document.querySelectorAll('.form-step').forEach(function(s) {
+    s.classList.remove('active');
+  });
+  var target = document.querySelector('[data-step="' + step + '"]');
+  if (target) target.classList.add('active');
+  currentStep = step;
+  updateStepIndicator();
+}
+
+function nextStep(step) {
+  showStep(step);
+}
+
+function prevStep(step) {
+  showStep(step);
+}
+
+function selectOption(el, groupId) {
+  var group = document.getElementById(groupId);
+  group.querySelectorAll('.form-option').forEach(function(opt) {
+    opt.classList.remove('selected');
+  });
+  el.classList.add('selected');
+  el.querySelector('input').checked = true;
+}
+
+function showWebsiteUrl(show) {
+  var field = document.getElementById('websiteUrlField');
+  if (show) {
+    field.classList.add('visible');
+  } else {
+    field.classList.remove('visible');
+  }
+}
+
+function submitForm() {
+  // Hide all steps
+  document.querySelectorAll('.form-step').forEach(function(s) {
+    s.classList.remove('active');
+  });
+  // Hide indicator and intro
+  document.getElementById('stepsIndicator').style.display = 'none';
+  document.querySelector('.form-intro').style.display = 'none';
+  // Show success
+  document.getElementById('formSuccess').classList.add('active');
+
+  // Collect form data (for future integration)
+  var formData = {
+    name: document.getElementById('formName').value,
+    branche: document.querySelector('input[name="branche"]:checked')?.value || '',
+    hasWebsite: document.querySelector('input[name="hasWebsite"]:checked')?.value || '',
+    websiteUrl: document.getElementById('formWebsiteUrl').value,
+    problem: document.getElementById('formProblem').value,
+    umsatz: document.querySelector('input[name="umsatz"]:checked')?.value || '',
+    kunden: document.querySelector('input[name="kunden"]:checked')?.value || '',
+    email: document.getElementById('formEmail').value,
+    phone: document.getElementById('formPhone').value
+  };
+
+  console.log('Form submitted:', formData);
+}
+</script>
+
+</body>
+</html>
