@@ -75,11 +75,23 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.02, rootMargin: '0px 0px -20px 0px' });
 
   document.querySelectorAll('.reveal').forEach(function(el) {
     observer.observe(el);
   });
+
+  /* Fallback: make all hero elements visible immediately on load */
+  document.querySelectorAll('.hero .reveal').forEach(function(el) {
+    el.classList.add('visible');
+  });
+
+  /* Safety net: if elements still hidden after 4s, force visible */
+  setTimeout(function() {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+      el.classList.add('visible');
+    });
+  }, 4000);
 
   /* Capacity bar fill animation */
   var capacityFills = document.querySelectorAll('.capacity-fill');
