@@ -1021,6 +1021,28 @@ body::after {
   margin-bottom: 1.5rem;
 }
 
+/* Mobile trust badges — shown only on mobile, above headline */
+.hero-trust-mobile {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .hero-trust-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .trust-mobile-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .hero-trust-desktop {
+    display: none;
+  }
+}
+
 .hero-headline {
   font-family: var(--font-display);
   font-weight: 600;
@@ -1085,6 +1107,10 @@ body::after {
   color: var(--text-muted);
 }
 
+.capacity-urgent {
+  color: var(--text-primary);
+}
+
 .capacity-bar {
   flex-shrink: 0;
   width: 120px;
@@ -1094,14 +1120,36 @@ body::after {
   overflow: hidden;
 }
 
+/* Desktop: hide mobile bar, show desktop bar */
+.capacity-bar-mobile { display: none; }
+.capacity-line1 { display: inline; }
+.capacity-line2 { display: inline; }
+
 @media (max-width: 480px) {
   .hero-capacity {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    display: block;
     font-size: 0.8rem;
   }
-  .capacity-bar { width: 100%; }
+  .capacity-bar-desktop { display: none; }
+  .capacity-line1 { display: block; }
+  .capacity-line2 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+  .capacity-bar-mobile {
+    display: block;
+    flex: 1;
+    height: 6px;
+    width: auto;
+  }
+  .capacity-bar-mobile .capacity-fill {
+    display: block;
+    height: 100%;
+    width: 63.6%;
+    transition: none;
+  }
 }
 
 .capacity-fill {
@@ -1363,6 +1411,12 @@ body::after {
 
   .hero-headline {
     font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-inner {
+    gap: 0.4rem;
   }
 }
 
@@ -2165,6 +2219,11 @@ select.form-input {
       <div class="hero-text">
         <div class="hero-label reveal">PREMIUM WEBDESIGN</div>
 
+        <div class="hero-trust-mobile reveal">
+          <span class="trust-mobile-badge">50+ Projekte umgesetzt</span>
+          <span class="trust-mobile-badge">Kunden verdoppeln ihr Investment in den ersten Monaten</span>
+        </div>
+
         <h1 class="hero-headline reveal reveal-delay-1">
           Du machst nicht zu wenig Umsatz
           weil dein Angebot nicht gut genug ist.
@@ -2266,17 +2325,19 @@ select.form-input {
     </div>
 
     <!-- Full width under grid -->
-    <div class="hero-trust reveal reveal-delay-4">
+    <div class="hero-trust hero-trust-desktop reveal reveal-delay-4">
       <span>50+ Projekte umgesetzt</span>
       <span class="trust-dot"></span>
       <span>Kunden verdoppeln ihr Investment in den ersten Monaten</span>
-      <span class="trust-dot"></span>
-      <span>Made in Germany</span>
     </div>
 
     <div class="hero-capacity reveal reveal-delay-5">
-      <span class="capacity-text">Kapazität Q2 2026: <strong>7/11</strong> Projekten vergeben, noch <strong>4 Plätze</strong> frei</span>
-      <div class="capacity-bar">
+      <span class="capacity-line1">Kapazität Q2 2026: <strong>7/11</strong> Projekten vergeben, nur noch</span>
+      <span class="capacity-line2">
+        <span class="capacity-urgent"><strong>4 Plätze</strong> frei</span>
+        <span class="capacity-bar capacity-bar-mobile"><span class="capacity-fill"></span></span>
+      </span>
+      <div class="capacity-bar capacity-bar-desktop">
         <div class="capacity-fill"></div>
       </div>
     </div>
@@ -2780,6 +2841,7 @@ function closeMenu() {
   document.querySelectorAll('.capacity-fill').forEach(function(el) {
     capObserver.observe(el);
   });
+
 })();
 
 /* ─── FAQ Accordion ─── */
