@@ -94,9 +94,13 @@
   margin-bottom: 1rem;
 }
 .case-block p {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 0.95rem;
   line-height: 1.8;
+  margin-bottom: 0.8rem;
+}
+.case-block p:last-child {
+  margin-bottom: 0;
 }
 
 /* ═══════════════════════════════════════════════
@@ -114,6 +118,33 @@
 .result-card {
   text-align: center;
   padding: 2rem 1.5rem;
+  border: 2.5px solid transparent;
+  border-radius: var(--card-radius);
+  background:
+    linear-gradient(
+      rgba(245,243,239,0.92),
+      rgba(245,243,239,0.92)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #b0b0b0 0%, #d0d0d0 8%, #8a8a8a 16%, #555 24%,
+      #c0c0c0 32%, #d8d8d8 40%, #777 48%, #4a4a4a 56%,
+      #b5b5b5 64%, #d0d0d0 72%, #888 80%, #555 88%, #b0b0b0 100%
+    ) border-box;
+  animation: chrome-border-rotate 3s linear infinite;
+}
+[data-theme="dark"] .result-card {
+  background:
+    linear-gradient(
+      rgba(14,14,14,0.95),
+      rgba(14,14,14,0.95)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #222 0%, #fafafa 8%, #888 16%, #444 24%,
+      #ddd 32%, #fff 40%, #777 48%, #333 56%,
+      #ccc 64%, #fff 72%, #888 80%, #444 88%, #222 100%
+    ) border-box;
 }
 .result-number {
   font-family: var(--font-display);
@@ -127,6 +158,84 @@
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════
+   BEWEIS / PROOF SECTION
+   ═══════════════════════════════════════════════ */
+.projekt-beweis {
+  padding: clamp(40px, 8vw, 80px) 0;
+}
+.beweis-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.beweis-frame {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  border: 2.5px solid transparent;
+  background:
+    linear-gradient(
+      rgba(245,243,239,0.92),
+      rgba(245,243,239,0.92)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #b0b0b0 0%, #d0d0d0 8%, #8a8a8a 16%, #555 24%,
+      #c0c0c0 32%, #d8d8d8 40%, #777 48%, #4a4a4a 56%,
+      #b5b5b5 64%, #d0d0d0 72%, #888 80%, #555 88%, #b0b0b0 100%
+    ) border-box;
+  animation: chrome-border-rotate 3s linear infinite;
+}
+[data-theme="dark"] .beweis-frame {
+  background:
+    linear-gradient(
+      rgba(14,14,14,0.95),
+      rgba(14,14,14,0.95)
+    ) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #222 0%, #fafafa 8%, #888 16%, #444 24%,
+      #ddd 32%, #fff 40%, #777 48%, #333 56%,
+      #ccc 64%, #fff 72%, #888 80%, #444 88%, #222 100%
+    ) border-box;
+}
+.beweis-frame img {
+  width: 100%;
+  display: block;
+  border-radius: calc(var(--card-radius) - 3px);
+}
+.beweis-side {
+  display: flex;
+  align-items: center;
+}
+.beweis-google {
+  width: 200px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+@media (max-width: 768px) {
+  .beweis-layout {
+    flex-direction: column;
+  }
+  .beweis-frame {
+    max-width: 100%;
+  }
+  .beweis-google {
+    width: 160px;
+  }
+}
+.beweis-caption {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 /* ═══════════════════════════════════════════════

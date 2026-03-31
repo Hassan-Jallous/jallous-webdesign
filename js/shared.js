@@ -81,6 +81,62 @@
     observer.observe(el);
   });
 
+  /* Count-up animation for KPI numbers */
+  var resultNumbers = document.querySelectorAll('.result-number');
+  if (resultNumbers.length > 0) {
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var text = el.textContent.trim();
+          var prefix = '';
+          var suffix = '';
+          var targetNum = 0;
+          var useSeparator = false;
+
+          var match = text.match(/^([+]?)([\d.]+)(.*)$/);
+          if (match) {
+            prefix = match[1];
+            suffix = match[3];
+            var numStr = match[2].replace(/\./g, '');
+            targetNum = parseInt(numStr, 10);
+            if (match[2].indexOf('.') !== -1) useSeparator = true;
+          } else {
+            countObserver.unobserve(el);
+            return;
+          }
+
+          if (targetNum <= 0) { countObserver.unobserve(el); return; }
+
+          var duration = 1500;
+          var startTime = null;
+
+          function formatNum(n) {
+            if (!useSeparator) return String(n);
+            return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+          }
+
+          function animate(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(eased * targetNum);
+            el.textContent = prefix + formatNum(current) + suffix;
+            if (progress < 1) requestAnimationFrame(animate);
+          }
+
+          el.textContent = prefix + '0' + suffix;
+          requestAnimationFrame(animate);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    resultNumbers.forEach(function(el) {
+      countObserver.observe(el);
+    });
+  }
+
   /* Capacity bar fill animation */
   var capacityFills = document.querySelectorAll('.capacity-fill');
   if (capacityFills.length > 0) {

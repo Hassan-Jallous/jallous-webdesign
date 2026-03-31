@@ -310,20 +310,20 @@
         </div>
       </a>
 
-      <a href="projekte/msd-autowelt.html" class="portfolio-card glass reveal reveal-delay-2">
-        <img src="projects/projekt-06.webp" alt="MSD Autowelt Website" loading="lazy">
-        <div>
-          <h4>MSD Autowelt</h4>
-          <p>EU Autohändler. Website von 2/10 auf 9/10. Der gleiche Händler, komplett anderes Vertrauen.</p>
-          <span class="portfolio-link">Fallstudie ansehen →</span>
-        </div>
-      </a>
-
-      <a href="projekte/shatleh.html" class="portfolio-card glass reveal reveal-delay-3">
+      <a href="projekte/shatleh.html" class="portfolio-card glass reveal reveal-delay-2">
         <img src="projects/projekt-08.webp" alt="Shatleh Website" loading="lazy">
         <div>
           <h4>Shatleh</h4>
           <p>B2B Bestell-Webapp. Orientalischer Lebensmittel-Großhandel. Komplettes Bestellsystem für Supermärkte, Kiosks und Gastronomie.</p>
+          <span class="portfolio-link">Fallstudie ansehen →</span>
+        </div>
+      </a>
+
+      <a href="projekte/msd-autowelt.html" class="portfolio-card glass reveal reveal-delay-3">
+        <img src="projects/projekt-06.webp" alt="MSD Autowelt Website" loading="lazy">
+        <div>
+          <h4>MSD Autowelt</h4>
+          <p>EU Autohändler. Website von 2/10 auf 9/10. Der gleiche Händler, komplett anderes Vertrauen.</p>
           <span class="portfolio-link">Fallstudie ansehen →</span>
         </div>
       </a>
@@ -333,6 +333,15 @@
         <div>
           <h4>Vitara Skin</h4>
           <p>Beauty E-Commerce. Premium Shopify Shop für eine Beauty Brand. Vergleichbare Shops in der Nische machen 200-400k€ monatlich. Frisch live.</p>
+          <span class="portfolio-link">Fallstudie ansehen →</span>
+        </div>
+      </a>
+
+      <a href="projekte/ak-montageservice.html" class="portfolio-card glass reveal reveal-delay-5">
+        <img src="projects/projekt-11.webp" alt="A&K Montageservice Website" loading="lazy">
+        <div>
+          <h4>A&K Montageservice</h4>
+          <p>Montageservice Berlin. Zäune, Tore, Markisen, professionelle Arbeit, aber online unsichtbar. Jetzt eine Website die sofort Vertrauen aufbaut.</p>
           <span class="portfolio-link">Fallstudie ansehen →</span>
         </div>
       </a>
@@ -738,8 +747,15 @@ document.querySelectorAll('a[href="#bewerbung"]').forEach(function(link) {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     var input = document.getElementById('formName');
+    /* iOS Safari only allows focus() from direct user gesture — no setTimeout */
+    input.focus();
     input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(function() { input.focus(); }, 500);
+    /* Close mobile menu if open */
+    var nav = document.querySelector('.nav-links');
+    if (nav && nav.classList.contains('active')) {
+      nav.classList.remove('active');
+      document.body.style.overflow = '';
+    }
   });
 });
 </script>
