@@ -1,7 +1,6 @@
-/* ─── Theme Toggle ─── */
+/* ─── Theme Toggle (runs immediately, before DOM ready) ─── */
 (function() {
   var html = document.documentElement;
-  var toggle = document.getElementById('themeToggle');
   var stored = localStorage.getItem('theme');
 
   if (stored) {
@@ -9,7 +8,14 @@
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     html.setAttribute('data-theme', 'dark');
   }
+})();
 
+/* ─── Everything else waits for DOM ─── */
+document.addEventListener('DOMContentLoaded', function() {
+
+  /* ─── Theme Toggle Click ─── */
+  var html = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
   if (toggle) {
     toggle.addEventListener('click', function() {
       var current = html.getAttribute('data-theme');
@@ -18,27 +24,23 @@
       localStorage.setItem('theme', next);
     });
   }
-})();
 
-/* ─── Nav scroll effect ─── */
-(function() {
+  /* ─── Nav scroll effect ─── */
   var nav = document.getElementById('nav');
-  if (!nav) return;
-  var ticking = false;
+  if (nav) {
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          nav.classList.toggle('scrolled', window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  }
 
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      requestAnimationFrame(function() {
-        nav.classList.toggle('scrolled', window.scrollY > 40);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-})();
-
-/* ─── Mobile menu ─── */
-(function() {
+  /* ─── Mobile menu ─── */
   var navHamburger = document.getElementById('navHamburger');
   var navLinks = document.getElementById('navLinks');
 
@@ -55,47 +57,52 @@
       navLinks.classList.remove('open');
     }
   };
-})();
 
-/* ─── Intersection Observer for scroll reveals ─── */
-(function() {
+  /* ─── Scroll Reveal Animations ─── */
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (prefersReducedMotion) {
     document.querySelectorAll('.reveal').forEach(function(el) {
       el.classList.add('visible');
     });
-    return;
-  }
-
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.02, rootMargin: '0px 0px -20px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(function(el) {
-    observer.observe(el);
-  });
-
-  /* Fallback: make all hero elements visible immediately on load */
-  document.querySelectorAll('.hero .reveal').forEach(function(el) {
-    el.classList.add('visible');
-  });
-
-  /* Safety net: if elements still hidden after 4s, force visible */
-  setTimeout(function() {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+  } else {
+    /* Make hero elements visible immediately — no scroll needed */
+    document.querySelectorAll('.hero .reveal, .projekt-hero .reveal').forEach(function(el) {
       el.classList.add('visible');
     });
-  }, 4000);
 
-  /* Capacity bar fill animation */
+    /* IntersectionObserver for the rest */
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
+
+      document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+        observer.observe(el);
+      });
+    } else {
+      /* Fallback: no IntersectionObserver (old browsers) — show all */
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }
+
+    /* Safety net: force all visible after 3s no matter what */
+    setTimeout(function() {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }, 3000);
+  }
+
+  /* ─── Capacity bar fill animation ─── */
   var capacityFills = document.querySelectorAll('.capacity-fill');
-  if (capacityFills.length > 0) {
+  if (capacityFills.length > 0 && 'IntersectionObserver' in window) {
     var capObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -109,4 +116,5 @@
       capObserver.observe(el);
     });
   }
-})();
+
+});
