@@ -3,12 +3,13 @@ const path = require('path');
 
 const sites = [
   { url: 'https://seagreen-lobster-495209.hostingersite.com/', name: 'projekt-01.jpg' },
-  { url: 'https://xn--staubflsterer-dlb.de', name: 'projekt-02.jpg' },
+  { url: 'https://staubflüsterer.de', name: 'projekt-02.jpg' },
   { url: 'https://vitaraskin.com', name: 'projekt-03.jpg' },
   { url: 'https://el-salam.com', name: 'projekt-04.jpg' },
   { url: 'https://shop.el-salam.com', name: 'projekt-05.jpg' },
   { url: 'https://msdautowelt.com', name: 'projekt-06.jpg' },
   { url: 'https://stage-code.com', name: 'projekt-07.jpg' },
+  { url: 'https://shatleh.de', name: 'projekt-08.jpg' },
 ];
 
 const outDir = path.join(__dirname, 'projects');
@@ -99,13 +100,71 @@ async function dismissOverlays(page) {
       await dismissOverlays(page);
       await new Promise(r => setTimeout(r, 500));
 
+      // Viewport screenshot (thumbnail)
       await page.screenshot({
         path: path.join(outDir, site.name),
         type: 'jpeg',
         quality: 90,
         fullPage: false,
       });
-      console.log(`  SAVED: ${site.name}`);
+      console.log(`  SAVED viewport: ${site.name}`);
+
+      // Scroll through entire page to trigger all scroll animations
+      console.log(`  Scrolling to trigger animations...`);
+      await page.evaluate(async () => {
+        const delay = (ms) => new Promise(r => setTimeout(r, ms));
+        if (!document.body) { await delay(1000); }
+        const scrollHeight = document.body ? document.body.scrollHeight : 5000;
+        const viewportHeight = window.innerHeight;
+        let currentPos = 0;
+        const step = viewportHeight * 0.5; // scroll half a viewport at a time
+
+        while (currentPos < scrollHeight) {
+          currentPos += step;
+          window.scrollTo(0, currentPos);
+          await delay(300); // wait for animations to trigger
+        }
+
+        // Scroll back to top
+        window.scrollTo(0, 0);
+        await delay(500);
+
+        // Force all elements visible — override common animation patterns
+        document.querySelectorAll('*').forEach(el => {
+          const style = window.getComputedStyle(el);
+          if (style.opacity === '0' || style.visibility === 'hidden') {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+          }
+          if (style.transform && style.transform !== 'none') {
+            el.style.transform = 'none';
+          }
+        });
+
+        // Remove common reveal/animation classes that hide content
+        document.querySelectorAll('[class*="reveal"], [class*="animate"], [class*="fade"], [class*="slide"], [class*="hidden"]').forEach(el => {
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+          el.style.transform = 'none';
+        });
+
+        // Kill all CSS animations/transitions to freeze state
+        const freezeCSS = document.createElement('style');
+        freezeCSS.textContent = '*, *::before, *::after { animation: none !important; transition: none !important; opacity: 1 !important; visibility: visible !important; }';
+        document.head.appendChild(freezeCSS);
+
+        await delay(500);
+      });
+
+      // Full-page screenshot with all content visible
+      const fullName = site.name.replace('.jpg', '-full.jpg');
+      await page.screenshot({
+        path: path.join(outDir, fullName),
+        type: 'jpeg',
+        quality: 85,
+        fullPage: true,
+      });
+      console.log(`  SAVED full-page: ${fullName}`);
     } catch (err) {
       console.error(`  ERROR (${site.url}): ${err.message}`);
     }

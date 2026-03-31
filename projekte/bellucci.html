@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellucci — Fallstudie | Jallous Webdesign</title>
+<meta name="description" content="Wie wir für Bellucci, Fine Dining am Kurfürstendamm Berlin, eine Premium-Website gebaut haben die 10-40k€ Umsatz über Feiertage generiert hat.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" sizes="64x64" href="../logos/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../logos/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/shared.css">
+<link rel="stylesheet" href="../css/projekt-detail.css">
+</head>
+<body>
+
+<!-- NAVIGATION (same as homepage, links prefixed with /) -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><span class="logo-letter">J</span><span class="logo-letter">A</span><span class="logo-letter">L</span><span class="logo-letter">L</span><span class="logo-letter">O</span><span class="logo-letter">U</span><span class="logo-letter">S</span></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#ergebnisse" onclick="closeMenu()">Ergebnisse</a></li>
+      <li><a href="/#ueber-mich" onclick="closeMenu()">Über mich</a></li>
+      <li><a href="/#faq" onclick="closeMenu()">FAQ</a></li>
+      <li><a href="/#bewerbung" class="nav-cta-mobile" onclick="closeMenu()">Erstgespräch sichern <span class="btn-arrow">→</span></a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Farbschema wechseln">
+        <span class="toggle-track"></span>
+        <span class="toggle-clouds"></span>
+        <span class="toggle-stars"></span>
+        <span class="toggle-star-extra"></span>
+        <span class="toggle-knob">
+          <span class="toggle-crater"></span>
+          <span class="toggle-crater"></span>
+          <span class="toggle-crater"></span>
+        </span>
+      </button>
+      <a href="/#bewerbung" class="nav-cta nav-cta-desktop">Erstgespräch sichern <span class="btn-arrow">→</span></a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- PROJEKT HERO -->
+<section class="projekt-hero">
+  <div class="container">
+    <a href="/#ergebnisse" class="back-link">← Alle Projekte</a>
+    <div class="section-label">FALLSTUDIE</div>
+    <h1>Bellucci</h1>
+    <p class="projekt-subtitle">Fine Dining am Kurfürstendamm, Berlin</p>
+    <div class="projekt-meta">
+      <span class="meta-tag">Restaurant</span>
+      <span class="meta-tag">Webdesign</span>
+      <span class="meta-tag">Google Ads</span>
+    </div>
+  </div>
+</section>
+
+<!-- HERO IMAGE -->
+<section class="projekt-image-hero">
+  <div class="container">
+    <div class="website-preview">
+      <div class="preview-browser-bar">
+        <div class="preview-dots">
+          <span class="preview-dot"></span>
+          <span class="preview-dot"></span>
+          <span class="preview-dot"></span>
+        </div>
+        <div class="preview-url-bar">bellucci-berlin.de</div>
+      </div>
+      <div class="preview-iframe-wrap">
+        <iframe src="https://seagreen-lobster-495209.hostingersite.com/" sandbox="allow-scripts allow-same-origin" loading="lazy" title="Bellucci Website Vorschau"></iframe>
+      </div>
+      <span class="preview-scroll-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        Scrollen
+      </span>
+    </div>
+
+    <!-- Mobile: Screenshot + Tap to open -->
+    <div class="website-preview-mobile" id="mobilePreview">
+      <img src="../projects/projekt-01.webp" alt="Bellucci Website Vorschau">
+      <div class="preview-mobile-hint" id="mobileHint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+        <span>Website ansehen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fullscreen Preview Modal -->
+<div class="preview-modal" id="previewModal">
+  <div class="preview-modal-bar">
+    <div></div>
+    <span class="preview-modal-url">bellucci-berlin.de</span>
+    <button class="preview-modal-close" id="modalClose">✕</button>
+  </div>
+  <iframe id="modalIframe" sandbox="allow-scripts allow-same-origin" title="Bellucci Website"></iframe>
+</div>
+
+<!-- CASE STUDY: PROBLEM & LÖSUNG -->
+<section class="projekt-case-study">
+  <div class="container">
+    <div class="case-grid">
+      <div class="case-block reveal">
+        <div class="section-label">DAS PROBLEM</div>
+        <h2>Ein Restaurant auf 9.5/10 Niveau — mit einer Website auf 3.5/10.</h2>
+        <p>Das Bellucci ist eines der besten Fine Dining Restaurants am Kurfürstendamm in Berlin. Die Küche, der Service, das Ambiente — alles auf höchstem Niveau. Aber die Website? Sah aus wie von 2015. Kunden googeln "Bellucci Berlin", sehen die Seite und fragen sich: ist das wirklich so gut? Ein Restaurant das 80€+ pro Person verlangt, braucht eine Website die dieses Versprechen hält — bevor der Gast überhaupt einen Fuß reingesetzt hat. Die alte Website hat genau das Gegenteil gemacht: Zweifel gesät statt Vertrauen aufgebaut.</p>
+      </div>
+      <div class="case-block reveal reveal-delay-1">
+        <div class="section-label">DIE LÖSUNG</div>
+        <h2>Eine Website die das Niveau des Restaurants widerspiegelt.</h2>
+        <p>Wir haben die Website von Grund auf neu gebaut. Premium Look der sofort kommuniziert: hier isst man auf höchstem Niveau. Hochwertige Food-Fotografie groß inszeniert, elegante Typografie, dezente Animationen. Die Speisekarte direkt auf der Seite — kein PDF-Download. Online-Reservierung integriert, damit Gäste nicht zum Telefon greifen müssen. Mobile-optimiert, weil die meisten Gäste unterwegs googeln. Alles was ein Gast sehen muss um zu sagen: "Ja, da will ich hin."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ERGEBNISSE / KPIs -->
+<section class="projekt-results">
+  <div class="container">
+    <div class="section-label">ERGEBNISSE</div>
+    <div class="results-grid">
+      <div class="result-card glass reveal">
+        <span class="result-number chrome-text">10-40k€</span>
+        <span class="result-label">Umsatz über Feiertage via Google Ads</span>
+      </div>
+      <div class="result-card glass reveal reveal-delay-1">
+        <span class="result-number chrome-text">9.5/10</span>
+        <span class="result-label">Website-Level passend zum Restaurant</span>
+      </div>
+      <div class="result-card glass reveal reveal-delay-2">
+        <span class="result-number chrome-text">+300%</span>
+        <span class="result-label">Mehr Online-Reservierungen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="projekt-tech">
+  <div class="container">
+    <div class="section-label">TECH STACK</div>
+    <div class="tech-tags">
+      <span class="tech-tag glass">Custom Design</span>
+      <span class="tech-tag glass">Responsive Development</span>
+      <span class="tech-tag glass">Google Ads</span>
+      <span class="tech-tag glass">SEO Optimierung</span>
+      <span class="tech-tag glass">Online-Reservierung</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="projekt-cta">
+  <div class="container">
+    <h2 class="reveal">Willst du ähnliche Ergebnisse?</h2>
+    <p class="reveal reveal-delay-1">Im Erstgespräch schaue ich mir deine Situation an und sage dir ehrlich ob und wie ich dir helfen kann.</p>
+    <a href="/#bewerbung" class="btn-primary reveal reveal-delay-2">Erstgespräch sichern <span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
+<!-- NÄCHSTES PROJEKT -->
+<div class="projekt-nav">
+  <div class="container">
+    <a href="el-salam.html" class="projekt-nav-link">Nächstes Projekt: El-Salam →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">JALLOUS</a>
+      <a href="/#bewerbung" class="footer-cta">Erstgespräch sichern <span class="btn-arrow">→</span></a>
+    </div>
+    <div class="footer-legal">
+      © 2026 Jallous Webdesign · Cortex Made LLC · <a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGBs</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Mobile preview: show hint after 2s, open fullscreen modal on tap */
+(function() {
+  var hint = document.getElementById('mobileHint');
+  var mobilePreview = document.getElementById('mobilePreview');
+  var modal = document.getElementById('previewModal');
+  var modalIframe = document.getElementById('modalIframe');
+  var modalClose = document.getElementById('modalClose');
+  var iframeSrc = 'https://seagreen-lobster-495209.hostingersite.com/';
+
+  if (hint) {
+    setTimeout(function() {
+      hint.classList.add('visible');
+    }, 2000);
+  }
+
+  if (mobilePreview) {
+    mobilePreview.addEventListener('click', function() {
+      modalIframe.src = iframeSrc;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', function() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      modalIframe.src = '';
+    });
+  }
+})();
+</script>
+<script src="../js/shared.js"></script>
+</body>
+</html>
