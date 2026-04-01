@@ -539,6 +539,27 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-primary);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(rgba(245,243,239,0.95), rgba(245,243,239,0.95)) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #b0b0b0 0%, #d0d0d0 8%, #8a8a8a 16%, #555 24%,
+      #c0c0c0 32%, #d8d8d8 40%, #777 48%, #4a4a4a 56%,
+      #b5b5b5 64%, #d0d0d0 72%, #888 80%, #555 88%, #b0b0b0 100%
+    ) border-box;
+  animation: chrome-border-rotate 3s linear infinite;
+}
+
+[data-theme="dark"] .about-stat {
+  background:
+    linear-gradient(rgba(14,14,14,0.95), rgba(14,14,14,0.95)) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #222 0%, #fafafa 8%, #888 16%, #444 24%,
+      #ddd 32%, #fff 40%, #777 48%, #333 56%,
+      #bbb 64%, #eee 72%, #666 80%, #444 88%, #222 100%
+    ) border-box;
 }
 
 @media (max-width: 768px) {

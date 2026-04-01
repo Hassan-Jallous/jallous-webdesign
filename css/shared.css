@@ -46,11 +46,11 @@
   --glass-border: rgba(0,0,0,0.12);
   --glass-border-strong: rgba(0,0,0,0.22);
   --glass-shadow: rgba(0,0,0,0.06);
-  --text-primary: #1a1a1a;
-  --text-secondary: rgba(0,0,0,0.55);
-  --text-muted: rgba(0,0,0,0.35);
-  --chrome-gradient: linear-gradient(135deg, #444 0%, #888 20%, #bbb 40%, #666 50%, #bbb 60%, #888 80%, #444 100%);
-  --chrome-text-gradient: linear-gradient(135deg, #555 0%, #999 20%, #bbb 40%, #777 50%, #bbb 60%, #999 80%, #555 100%);
+  --text-primary: #000;
+  --text-secondary: #000;
+  --text-muted: rgba(0,0,0,0.5);
+  --chrome-gradient: linear-gradient(135deg, #222 0%, #555 20%, #888 40%, #333 50%, #888 60%, #555 80%, #222 100%);
+  --chrome-text-gradient: linear-gradient(135deg, #1a1a1a 0%, #444 15%, #777 30%, #1a1a1a 50%, #777 70%, #444 85%, #1a1a1a 100%);
   --blur-amount: 20px;
   --card-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
   --card-shadow-hover: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
@@ -72,9 +72,9 @@
   --glass-border: rgba(255,255,255,0.1);
   --glass-border-strong: rgba(255,255,255,0.18);
   --glass-shadow: rgba(0,0,0,0.3);
-  --text-primary: #e8e8e8;
-  --text-secondary: rgba(255,255,255,0.5);
-  --text-muted: rgba(255,255,255,0.45);
+  --text-primary: #fff;
+  --text-secondary: #fff;
+  --text-muted: rgba(255,255,255,0.6);
   --chrome-gradient: linear-gradient(135deg, #2a2a2a 0%, #555 15%, #888 25%, #ccc 35%, #fff 50%, #ccc 65%, #888 75%, #555 85%, #2a2a2a 100%);
   --chrome-text-gradient: linear-gradient(135deg, #666 0%, #ccc 20%, #fff 40%, #999 50%, #fff 60%, #ccc 80%, #666 100%);
   --blur-amount: 24px;
@@ -95,9 +95,9 @@
     --glass-border: rgba(255,255,255,0.1);
     --glass-border-strong: rgba(255,255,255,0.18);
     --glass-shadow: rgba(0,0,0,0.3);
-    --text-primary: #e8e8e8;
-    --text-secondary: rgba(255,255,255,0.5);
-    --text-muted: rgba(255,255,255,0.45);
+    --text-primary: #fff;
+    --text-secondary: #fff;
+    --text-muted: rgba(255,255,255,0.6);
       --chrome-gradient: linear-gradient(135deg, #2a2a2a 0%, #555 15%, #888 25%, #ccc 35%, #fff 50%, #ccc 65%, #888 75%, #555 85%, #2a2a2a 100%);
     --chrome-text-gradient: linear-gradient(135deg, #666 0%, #ccc 20%, #fff 40%, #999 50%, #fff 60%, #ccc 80%, #666 100%);
     --blur-amount: 24px;
@@ -973,6 +973,8 @@ body::after {
 .featured-card {
   padding: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
 }
 
@@ -997,12 +999,13 @@ a.featured-card,
 a.portfolio-card {
   text-decoration: none;
   color: inherit;
-  display: block;
 }
 
 .portfolio-card {
   padding: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-card > img {
@@ -1014,10 +1017,24 @@ a.portfolio-card {
 
 .portfolio-card > div {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card > div .portfolio-link {
+  margin-top: auto;
 }
 
 .featured-content {
   padding: 2rem 2.5rem 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-content .portfolio-link {
+  margin-top: auto;
 }
 
 .featured-content h3 {
@@ -1061,6 +1078,59 @@ a.portfolio-card {
   margin-top: 0.5rem;
   background: var(--glass-bg);
   border: 1.5px solid var(--glass-border);
+}
+
+.featured-result.chrome-oval {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 0.6rem;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(rgba(245,243,239,0.95), rgba(245,243,239,0.95)) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #b0b0b0 0%, #d0d0d0 8%, #8a8a8a 16%, #555 24%,
+      #c0c0c0 32%, #d8d8d8 40%, #777 48%, #4a4a4a 56%,
+      #b5b5b5 64%, #d0d0d0 72%, #888 80%, #555 88%, #b0b0b0 100%
+    ) border-box;
+  animation: chrome-border-rotate 3s linear infinite;
+}
+
+[data-theme="dark"] .featured-result.chrome-oval {
+  background:
+    linear-gradient(rgba(14,14,14,0.95), rgba(14,14,14,0.95)) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #222 0%, #fafafa 8%, #888 16%, #444 24%,
+      #ddd 32%, #fff 40%, #777 48%, #333 56%,
+      #bbb 64%, #eee 72%, #666 80%, #444 88%, #222 100%
+    ) border-box;
+}
+
+.featured-result .result-item {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.featured-result .result-item .chrome-text {
+  font-weight: 700;
+}
+
+.featured-result .result-item:last-of-type {
+  font-weight: 600;
+}
+
+.featured-result .result-sep {
+  color: var(--text-muted);
+  font-weight: 300;
+  opacity: 0.5;
 }
 
 .featured-result .chrome-text {
