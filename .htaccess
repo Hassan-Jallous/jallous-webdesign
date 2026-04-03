@@ -1,0 +1,42 @@
+# ═══════════════════════════════════════════════
+# Cache-Control for LiteSpeed / Hostinger
+# ═══════════════════════════════════════════════
+
+# DISABLE LiteSpeed Server-Side Cache completely
+<IfModule LiteSpeed>
+  CacheLookup off
+</IfModule>
+
+# HTML — no cache (always fresh)
+<FilesMatch "\.(html)$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</FilesMatch>
+
+# CSS & JS — no cache (always live)
+<FilesMatch "\.(css|js)$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires 0
+</FilesMatch>
+
+# Images & Fonts — long cache (30 days)
+<FilesMatch "\.(webp|png|jpg|jpeg|svg|ico|woff2|woff|ttf)$">
+  Header set Cache-Control "public, max-age=2592000, immutable"
+</FilesMatch>
+
+# XML (sitemap) — short cache
+<FilesMatch "\.(xml)$">
+  Header set Cache-Control "public, max-age=3600"
+</FilesMatch>
+
+# PHP — no cache
+<FilesMatch "\.(php)$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+</FilesMatch>
+
+# Block database files from web access
+<FilesMatch "\.(db|sqlite|sqlite3)$">
+  Require all denied
+</FilesMatch>

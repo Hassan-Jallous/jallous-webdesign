@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jallous-webdesign.de/sitemap.xml
+
+# Legal pages are noindex via meta tag
+# API endpoints
+Disallow: /api/
+Disallow: /dashboard/

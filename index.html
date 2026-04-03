@@ -8,11 +8,15 @@
 <meta name="keywords" content="Webdesign, Premium Webdesign, Website erstellen lassen, Webdesigner Deutschland, Conversion Optimierung, Online Shop erstellen">
 <meta name="author" content="Hassan Jallous, Jallous Webdesign">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jallous-webdesign.de/">
 <meta property="og:title" content="Jallous Webdesign | Premium Webdesign das verkauft">
 <meta property="og:description" content="Premium Webdesign das Vertrauen aufbaut und verkauft. Kunden verdoppeln ihr Investment in den ersten Monaten.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jallous-webdesign.de">
 <meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://jallous-webdesign.de/hassan-hero-light.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <link rel="icon" type="image/png" sizes="64x64" href="logos/favicon-64.png">
 <link rel="icon" type="image/png" sizes="32x32" href="logos/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,9 +38,13 @@
 
 <link rel="stylesheet" href="css/shared.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/cc.css">
+<script defer src="js/cc.js"></script>
+<script defer src="js/tracking.js"></script>
 </head>
 
 <body>
+
 
 <!-- ═══════════════════════════════════════════════
      NAVIGATION
@@ -252,15 +260,15 @@
 
           <div class="featured-detail">
             <strong>Problem</strong>
-            <p>Ein Restaurant auf 9.5/10 Niveau, mit einer Website auf 3.5/10. Kunden googeln "Bellucci Berlin", sehen die Seite und fragen sich: ist das wirklich so gut?</p>
+            <p>Zwei Filialen, Fine Dining am Ku'damm, durchschnittlich 80€ pro Gast, aber online komplett unsichtbar. Keine Ads, kein Marketing, alles nur über Laufkundschaft.</p>
           </div>
           <div class="featured-detail">
             <strong>Lösung</strong>
-            <p>Neue Website die das Niveau des Restaurants widerspiegelt. Premium Look, Reservierung, Speisekarte, alles auf dem Level das die Gäste erwarten.</p>
+            <p>Instagram und Facebook Werbung für Sichtbarkeit, Google Ads für direkte Reservierungen. Dann neue Premium Website gebaut.</p>
           </div>
           <div class="featured-detail">
             <strong>Ergebnis</strong>
-            <p>10-40k€ Umsatz über Feiertage via Google Ads dank der neuen Webpräsenz.</p>
+            <p>~88.800€ geschätzter Umsatz in 7 Wochen. 2,7 Mio. Menschen erreicht. 614+ Reservierungen.</p>
           </div>
           <span class="portfolio-link">Fallstudie lesen →</span>
         </div>
@@ -286,8 +294,8 @@
             <span class="result-item"><span class="chrome-text">+3.874%</span> Wachstum</span>
             <span class="result-sep">|</span>
             <span class="result-item"><span class="chrome-text">10.000€+</span> Umsatz in 4 Monaten</span>
-            <span class="result-sep">|</span>
-            <span class="result-item"><span class="chrome-text">211</span> Bestellungen</span>
+            <br class="result-break">
+            <span class="result-item"><span class="chrome-text">+211</span> Bestellungen</span>
             <span class="result-sep">|</span>
             <span class="result-item">Ohne einen Cent in Werbung</span>
           </div>
@@ -311,7 +319,7 @@
         <img src="projects/projekt-07.webp" alt="Stage-Code Website" loading="lazy">
         <div>
           <h4>Stage-Code</h4>
-          <p>Eventfirma. Alte Website hat Kunden verjagt. Komplett neues Branding und Website. Jetzt sieht man sofort: die wissen was sie tun.</p>
+          <p>Eventfirma. Alte Website hat Kunden verjagt. Neues Branding, neue Website, automatische Terminbuchung. 3x mehr Anfragen.</p>
           <span class="portfolio-link">Fallstudie ansehen →</span>
         </div>
       </a>
@@ -338,7 +346,7 @@
         <img src="projects/projekt-03.webp" alt="Vitara Skin Website" loading="lazy">
         <div>
           <h4>Vitara Skin</h4>
-          <p>Beauty E-Commerce. Premium Shopify Shop für eine Beauty Brand. Vergleichbare Shops in der Nische machen 200-400k€ monatlich. Frisch live.</p>
+          <p>Beauty Brand. Komplett eigener Online Shop, automatischer Versand, komplettes Branding von Logo bis Verpackung.</p>
           <span class="portfolio-link">Fallstudie ansehen →</span>
         </div>
       </a>
@@ -364,7 +372,7 @@
 
     <div class="about-layout">
       <div class="about-photo reveal">
-        FOTO
+        <img src="hassan-about.webp" alt="Hassan Jallous — Gründer von Jallous Webdesign" loading="lazy">
       </div>
 
       <div class="about-text reveal reveal-delay-1">
@@ -493,7 +501,8 @@
         <div class="form-step active" data-step="1">
           <div class="form-step-label">SCHRITT 1 VON 6</div>
           <h3>Wie heißt du?</h3>
-          <input type="text" class="form-input" id="formName" placeholder="Dein Name" autocomplete="name">
+          <input type="text" class="form-input" id="formName" placeholder="Vor- und Nachname" autocomplete="name">
+          <div class="form-error-msg" id="errorName"></div>
           <div class="form-nav">
             <div></div>
             <button class="form-next" onclick="nextStep(2)">Weiter →</button>
@@ -524,6 +533,7 @@
               <input type="radio" name="branche" value="Sonstiges">Sonstiges
             </label>
           </div>
+          <div class="form-error-msg" id="errorBranche"></div>
           <div class="form-nav">
             <button class="form-back" onclick="prevStep(1)">← Zurück</button>
             <button class="form-next" onclick="nextStep(3)">Weiter →</button>
@@ -538,13 +548,14 @@
             <label class="form-option" onclick="selectOption(this, 'websiteOptions'); showWebsiteUrl(true)">
               <input type="radio" name="hasWebsite" value="Ja">Ja
             </label>
+            <div class="conditional-field" id="websiteUrlField">
+              <input type="text" class="form-input" id="formWebsiteUrl" placeholder="z.B. example.de">
+            </div>
             <label class="form-option" onclick="selectOption(this, 'websiteOptions'); showWebsiteUrl(false)">
               <input type="radio" name="hasWebsite" value="Nein">Nein
             </label>
           </div>
-          <div class="conditional-field" id="websiteUrlField">
-            <input type="url" class="form-input" id="formWebsiteUrl" placeholder="Deine Website-URL">
-          </div>
+          <div class="form-error-msg" id="errorWebsite"></div>
           <div class="form-nav">
             <button class="form-back" onclick="prevStep(2)">← Zurück</button>
             <button class="form-next" onclick="nextStep(4)">Weiter →</button>
@@ -556,6 +567,7 @@
           <div class="form-step-label">SCHRITT 4 VON 6</div>
           <h3>Was ist gerade dein größtes Problem mit deinem Online-Auftritt?</h3>
           <textarea class="form-input" id="formProblem" placeholder="Erzähl mir davon..."></textarea>
+          <div class="form-error-msg" id="errorProblem"></div>
           <div class="form-nav">
             <button class="form-back" onclick="prevStep(3)">← Zurück</button>
             <button class="form-next" onclick="nextStep(5)">Weiter →</button>
@@ -566,7 +578,7 @@
         <div class="form-step" data-step="5">
           <div class="form-step-label">SCHRITT 5 VON 6</div>
           <h3>Wie viel Umsatz machst du gerade im Monat?</h3>
-          <div class="form-options" id="umsatzOptions" style="margin-bottom: 1.5rem;">
+          <div class="form-options" id="umsatzOptions" style="margin-bottom: 0;">
             <label class="form-option" onclick="selectOption(this, 'umsatzOptions')">
               <input type="radio" name="umsatz" value="Unter 5.000€">Unter 5.000€
             </label>
@@ -580,8 +592,9 @@
               <input type="radio" name="umsatz" value="Über 50.000€">Über 50.000€
             </label>
           </div>
+          <div class="form-error-msg" id="errorUmsatz"></div>
 
-          <h3 style="margin-top: 0.5rem;">Wie erreichst du gerade deine Kunden?</h3>
+          <h3 style="margin-top: 1rem;">Wie erreichst du gerade deine Kunden?</h3>
           <div class="form-options" id="kundenOptions">
             <label class="form-option" onclick="selectOption(this, 'kundenOptions')">
               <input type="radio" name="kunden" value="Mund zu Mund">Mund zu Mund
@@ -599,6 +612,7 @@
               <input type="radio" name="kunden" value="Gar nicht richtig">Gar nicht richtig
             </label>
           </div>
+          <div class="form-error-msg" id="errorKunden"></div>
           <div class="form-nav">
             <button class="form-back" onclick="prevStep(4)">← Zurück</button>
             <button class="form-next" onclick="nextStep(6)">Weiter →</button>
@@ -610,8 +624,14 @@
           <div class="form-step-label">SCHRITT 6 VON 6</div>
           <h3>Wie kann ich dich erreichen?</h3>
           <div class="form-row">
-            <input type="email" class="form-input" id="formEmail" placeholder="E-Mail Adresse" autocomplete="email">
-            <input type="tel" class="form-input" id="formPhone" placeholder="Telefonnummer" autocomplete="tel">
+            <div>
+              <input type="email" class="form-input" id="formEmail" placeholder="E-Mail Adresse" autocomplete="email">
+              <div class="form-error-msg" id="errorEmail"></div>
+            </div>
+            <div>
+              <input type="tel" class="form-input" id="formPhone" placeholder="Telefonnummer" autocomplete="tel">
+              <div class="form-error-msg" id="errorPhone"></div>
+            </div>
           </div>
           <div class="form-nav">
             <button class="form-back" onclick="prevStep(5)">← Zurück</button>
@@ -621,6 +641,10 @@
 
         <!-- Success -->
         <div class="form-success" id="formSuccess">
+          <canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+          <div class="success-checkmark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 10 18 20 6"></polyline></svg>
+          </div>
           <h3>Danke!</h3>
           <p>Ich schaue mir deine Angaben an und melde mich in den nächsten 24-48 Stunden bei dir.</p>
         </div>
@@ -639,7 +663,8 @@
       <a href="#bewerbung" class="footer-cta">Erstgespräch sichern <span class="btn-arrow">→</span></a>
     </div>
     <div class="footer-legal">
-      © 2026 Jallous Webdesign · Cortex Made LLC · <a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGBs</a>
+      <span class="footer-copy">© 2026 Jallous Webdesign · Cortex Made LLC</span>
+      <span class="footer-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="agb.html">AGBs</a> · <a href="#" onclick="resetCookieConsent();return false;">Cookie-Einstellungen</a></span>
     </div>
   </div>
 </footer>
@@ -695,11 +720,145 @@ function showStep(step) {
   updateStepIndicator();
 }
 
+/* ─── Validation helpers ─── */
+function showError(id, msg, shakeEl) {
+  var el = document.getElementById(id);
+  el.textContent = msg;
+  el.classList.add('visible');
+  if (shakeEl) {
+    shakeEl.classList.add('shake');
+    setTimeout(function() { shakeEl.classList.remove('shake'); }, 400);
+  }
+}
+
+function clearError(id) {
+  var el = document.getElementById(id);
+  if (el) { el.textContent = ''; el.classList.remove('visible'); }
+}
+
+function clearStepErrors() {
+  document.querySelectorAll('.form-error-msg').forEach(function(e) {
+    e.textContent = ''; e.classList.remove('visible');
+  });
+  document.querySelectorAll('.form-input.shake, .form-options.shake').forEach(function(e) {
+    e.classList.remove('shake');
+  });
+}
+
+function validateStep(step) {
+  clearStepErrors();
+  if (step === 1) {
+    /* Name: only letters/spaces/hyphens, min 2 words */
+    var name = document.getElementById('formName').value.trim();
+    var nameInput = document.getElementById('formName');
+    if (!name) {
+      showError('errorName', 'Bitte gib deinen Vor- und Nachnamen ein.', nameInput);
+      nameInput.focus();
+      return false;
+    }
+    if (!/^[a-zA-ZÀ-ÿ\u00C0-\u024F\s\-']+$/.test(name)) {
+      showError('errorName', 'Nur Buchstaben erlaubt — keine Zahlen oder Sonderzeichen.', nameInput);
+      nameInput.focus();
+      return false;
+    }
+    var words = name.split(/\s+/).filter(function(w) { return w.length > 0; });
+    if (words.length < 2) {
+      showError('errorName', 'Bitte gib Vor- und Nachnamen ein.', nameInput);
+      nameInput.focus();
+      return false;
+    }
+    return true;
+  }
+
+  if (step === 2) {
+    var checked = document.querySelector('input[name="branche"]:checked');
+    if (!checked) {
+      showError('errorBranche', 'Bitte wähle deine Branche.', document.getElementById('brancheOptions'));
+      return false;
+    }
+    return true;
+  }
+
+  if (step === 3) {
+    var checked = document.querySelector('input[name="hasWebsite"]:checked');
+    if (!checked) {
+      showError('errorWebsite', 'Bitte wähle eine Option.', document.getElementById('websiteOptions'));
+      return false;
+    }
+    if (checked.value === 'Ja') {
+      var url = document.getElementById('formWebsiteUrl').value.trim();
+      var urlInput = document.getElementById('formWebsiteUrl');
+      if (!url) {
+        showError('errorWebsite', 'Bitte gib deine Website-Adresse ein.', urlInput);
+        urlInput.focus();
+        return false;
+      }
+      /* Accept plain domains like example.de, full URLs, subdomains */
+      if (!/^(https?:\/\/)?[a-zA-Z0-9]([a-zA-Z0-9\-]*[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+/.test(url)) {
+        showError('errorWebsite', 'Bitte gib eine gültige Domain ein (z.B. example.de).', urlInput);
+        urlInput.focus();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  if (step === 4) {
+    var problem = document.getElementById('formProblem').value.trim();
+    var problemInput = document.getElementById('formProblem');
+    if (!problem) {
+      showError('errorProblem', 'Bitte beschreibe kurz dein Problem.', problemInput);
+      problemInput.focus();
+      return false;
+    }
+    return true;
+  }
+
+  if (step === 5) {
+    var umsatz = document.querySelector('input[name="umsatz"]:checked');
+    if (!umsatz) {
+      showError('errorUmsatz', 'Bitte wähle deinen Umsatzbereich.', document.getElementById('umsatzOptions'));
+      return false;
+    }
+    var kunden = document.querySelector('input[name="kunden"]:checked');
+    if (!kunden) {
+      showError('errorKunden', 'Bitte wähle wie du Kunden erreichst.', document.getElementById('kundenOptions'));
+      return false;
+    }
+    return true;
+  }
+
+  if (step === 6) {
+    var valid = true;
+    var email = document.getElementById('formEmail').value.trim();
+    var emailInput = document.getElementById('formEmail');
+    var phone = document.getElementById('formPhone').value.trim();
+    var phoneInput = document.getElementById('formPhone');
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showError('errorEmail', 'Bitte gib eine gültige E-Mail ein.', emailInput);
+      if (valid) emailInput.focus();
+      valid = false;
+    }
+    if (!phone || !/^[\d\s\+\-()]{6,}$/.test(phone)) {
+      showError('errorPhone', 'Bitte gib eine gültige Telefonnummer ein.', phoneInput);
+      if (valid) phoneInput.focus();
+      valid = false;
+    }
+    return valid;
+  }
+
+  return true;
+}
+
 function nextStep(step) {
+  /* Validate current step (step - 1) before advancing */
+  if (!validateStep(step - 1)) return;
   showStep(step);
 }
 
 function prevStep(step) {
+  clearStepErrors();
   showStep(step);
 }
 
@@ -710,6 +869,14 @@ function selectOption(el, groupId) {
   });
   el.classList.add('selected');
   el.querySelector('input').checked = true;
+  /* Clear any error on this group when user selects */
+  var errorMap = {
+    brancheOptions: 'errorBranche',
+    websiteOptions: 'errorWebsite',
+    umsatzOptions: 'errorUmsatz',
+    kundenOptions: 'errorKunden'
+  };
+  if (errorMap[groupId]) clearError(errorMap[groupId]);
 }
 
 function showWebsiteUrl(show) {
@@ -722,6 +889,9 @@ function showWebsiteUrl(show) {
 }
 
 function submitForm() {
+  /* Validate step 6 before submitting */
+  if (!validateStep(6)) return;
+
   // Hide all steps
   document.querySelectorAll('.form-step').forEach(function(s) {
     s.classList.remove('active');
@@ -731,6 +901,7 @@ function submitForm() {
   document.querySelector('.form-intro').style.display = 'none';
   // Show success
   document.getElementById('formSuccess').classList.add('active');
+  document.getElementById('applicationForm').classList.add('success-state');
 
   // Collect form data (for future integration)
   var formData = {
@@ -746,22 +917,133 @@ function submitForm() {
   };
 
   console.log('Form submitted:', formData);
+
+  // Send form data to backend
+  fetch('/api/submit-form.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  }).catch(function(err) {
+    console.error('Form submit error:', err);
+  });
+
+  /* Launch chrome confetti */
+  launchChromeConfetti();
 }
+
+/* ─── Chrome Confetti Animation ─── */
+function launchChromeConfetti() {
+  var canvas = document.getElementById('confettiCanvas');
+  var container = document.getElementById('formSuccess');
+  if (!canvas || !container) return;
+
+  canvas.width = container.offsetWidth;
+  canvas.height = container.offsetHeight;
+  var ctx = canvas.getContext('2d');
+
+  /* Chrome color palette */
+  var chromeColors = [
+    '#d8d8d8', '#b0b0b0', '#888888', '#666666', '#aaaaaa',
+    '#c0c0c0', '#e0e0e0', '#555555', '#999999', '#f0f0f0'
+  ];
+
+  var particles = [];
+  var totalParticles = 60;
+
+  for (var i = 0; i < totalParticles; i++) {
+    particles.push({
+      x: canvas.width / 2 + (Math.random() - 0.5) * 40,
+      y: canvas.height * 0.3,
+      vx: (Math.random() - 0.5) * 8,
+      vy: -Math.random() * 6 - 2,
+      w: Math.random() * 8 + 3,
+      h: Math.random() * 6 + 2,
+      color: chromeColors[Math.floor(Math.random() * chromeColors.length)],
+      rotation: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 12,
+      gravity: 0.12 + Math.random() * 0.08,
+      opacity: 1,
+      fade: 0.003 + Math.random() * 0.005,
+      shimmer: Math.random() * Math.PI * 2,
+      shimmerSpeed: 0.05 + Math.random() * 0.1
+    });
+  }
+
+  var animFrame;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var alive = false;
+
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      if (p.opacity <= 0) continue;
+      alive = true;
+
+      p.x += p.vx;
+      p.vy += p.gravity;
+      p.y += p.vy;
+      p.vx *= 0.99;
+      p.rotation += p.rotSpeed;
+      p.opacity -= p.fade;
+      p.shimmer += p.shimmerSpeed;
+
+      /* Chrome shimmer effect — brightness oscillates */
+      var shimmerAlpha = 0.5 + Math.sin(p.shimmer) * 0.5;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation * Math.PI / 180);
+      ctx.globalAlpha = Math.max(0, p.opacity);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      /* Shimmer highlight overlay */
+      ctx.globalAlpha = Math.max(0, p.opacity * shimmerAlpha * 0.6);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w * 0.5, p.h);
+      ctx.restore();
+    }
+
+    if (alive) {
+      animFrame = requestAnimationFrame(animate);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  animate();
+}
+
+/* Clear errors on input typing */
+document.getElementById('formName').addEventListener('input', function() { clearError('errorName'); });
+document.getElementById('formProblem').addEventListener('input', function() { clearError('errorProblem'); });
+document.getElementById('formWebsiteUrl').addEventListener('input', function() { clearError('errorWebsite'); });
+document.getElementById('formEmail').addEventListener('input', function() { clearError('errorEmail'); });
+document.getElementById('formPhone').addEventListener('input', function() { clearError('errorPhone'); });
 
 /* Focus name input when any #bewerbung link is clicked */
 document.querySelectorAll('a[href="#bewerbung"]').forEach(function(link) {
   link.addEventListener('click', function(e) {
     e.preventDefault();
-    var input = document.getElementById('formName');
-    /* iOS Safari only allows focus() from direct user gesture — no setTimeout */
-    input.focus();
-    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    /* Close mobile menu if open */
+
+    /* Close mobile menu first if open */
     var nav = document.querySelector('.nav-links');
     if (nav && nav.classList.contains('active')) {
       nav.classList.remove('active');
       document.body.style.overflow = '';
     }
+
+    /* Always reset to step 1 */
+    showStep(1);
+
+    var input = document.getElementById('formName');
+
+    /* iOS Safari only honours focus() inside the synchronous click handler.
+       We focus FIRST (opens keyboard), then scroll after a short delay
+       so the viewport accounts for the keyboard height. */
+    input.focus();
+
+    setTimeout(function() {
+      input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 350);
   });
 });
 </script>

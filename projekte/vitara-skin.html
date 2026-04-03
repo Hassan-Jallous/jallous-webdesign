@@ -4,8 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vitara Skin — Fallstudie | Jallous Webdesign</title>
-<meta name="description" content="Premium Shopify Shop für eine Beauty Brand — vergleichbare Shops in der Nische machen 200-400k€ monatlich.">
+<meta name="description" content="Komplett eigener Online Shop für eine Beauty Brand — Custom Design, automatischer Versand, komplettes Branding von Logo bis Verpackung.">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jallous-webdesign.de/projekte/vitara-skin.html">
+<meta property="og:title" content="Vitara Skin — Fallstudie | Jallous Webdesign">
+<meta property="og:description" content="Komplett eigener Online Shop für eine Beauty Brand — Custom Design, automatischer Versand, komplettes Branding von Logo bis Verpackung.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jallous-webdesign.de/projekte/vitara-skin.html">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://jallous-webdesign.de/projects/projekt-05.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vitara Skin — Fallstudie",
+  "description": "Komplett eigener Online Shop für eine Beauty Brand — Custom Design, automatischer Versand, komplettes Branding von Logo bis Verpackung.",
+  "author": { "@type": "Person", "name": "Hassan Jallous" },
+  "publisher": { "@type": "Organization", "name": "Jallous Webdesign", "url": "https://jallous-webdesign.de" },
+  "url": "https://jallous-webdesign.de/projekte/vitara-skin.html"
+}
+</script>
 <link rel="icon" type="image/png" sizes="64x64" href="../logos/favicon-64.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../logos/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +31,9 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/shared.css">
 <link rel="stylesheet" href="../css/projekt-detail.css">
+<link rel="stylesheet" href="../css/cc.css">
+<script defer src="../js/cc.js"></script>
+<script defer src="../js/tracking.js"></script>
 </head>
 <body>
 
@@ -52,11 +73,11 @@
     <a href="/#ergebnisse" class="back-link">← Alle Projekte</a>
     <div class="section-label">FALLSTUDIE</div>
     <h1>Vitara Skin</h1>
-    <p class="projekt-subtitle">Beauty E-Commerce, Premium Shopify Shop</p>
+    <p class="projekt-subtitle">Beauty Brand, Komplett eigener Online Shop + Branding</p>
     <div class="projekt-meta">
-      <span class="meta-tag">Beauty</span>
-      <span class="meta-tag">Shopify</span>
-      <span class="meta-tag">E-Commerce</span>
+      <span class="meta-tag">Online Shop</span>
+      <span class="meta-tag">Branding</span>
+      <span class="meta-tag">Automatisierung</span>
     </div>
   </div>
 </section>
@@ -64,7 +85,8 @@
 <!-- HERO IMAGE -->
 <section class="projekt-image-hero">
   <div class="container">
-    <div class="website-preview">
+    <!-- Desktop: Screenshot statt iframe — Shopify blockiert iframes -->
+    <a href="https://vitaraskin.com" target="_blank" rel="noopener" class="website-preview-static">
       <div class="preview-browser-bar">
         <div class="preview-dots">
           <span class="preview-dot"></span>
@@ -73,34 +95,31 @@
         </div>
         <div class="preview-url-bar">vitaraskin.com</div>
       </div>
-      <div class="preview-iframe-wrap">
-        <iframe src="https://vitaraskin.com" sandbox="allow-scripts allow-same-origin" loading="lazy" title="Vitara Skin Website Vorschau"></iframe>
-      </div>
+      <img src="../projects/projekt-03.webp" alt="Vitara Skin Website Vorschau" loading="lazy">
       <span class="preview-scroll-hint">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-        Scrollen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Website öffnen
       </span>
-    </div>
+    </a>
 
-    <!-- Mobile: Screenshot + Tap to open -->
-    <div class="website-preview-mobile" id="mobilePreview">
-      <img src="../projects/projekt-03.webp" alt="Vitara Skin Website Vorschau">
-      <div class="preview-mobile-hint" id="mobileHint">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-        <span>Website ansehen</span>
-      </div>
-    </div>
+    <!-- Mobile: Eigenes Mobile-Bild mit Link -->
+    <a href="https://vitaraskin.com" target="_blank" rel="noopener" class="website-preview-mobile-static">
+      <img src="../projects/vitara-skin-mobile.webp" alt="Vitara Skin Website Mobile Vorschau" loading="lazy">
+      <span class="preview-mobile-open">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        Website öffnen
+      </span>
+    </a>
   </div>
 </section>
 
-<!-- Fullscreen Preview Modal -->
+<!-- Fullscreen Preview Modal (disabled — Shopify blocks iframes) -->
 <div class="preview-modal" id="previewModal">
   <div class="preview-modal-bar">
     <div></div>
     <span class="preview-modal-url">vitaraskin.com</span>
     <button class="preview-modal-close" id="modalClose">✕</button>
   </div>
-  <iframe id="modalIframe" sandbox="allow-scripts allow-same-origin" title="Vitara Skin Website"></iframe>
 </div>
 
 <!-- CASE STUDY: PROBLEM & LÖSUNG -->
@@ -108,19 +127,20 @@
   <div class="container">
     <div class="case-grid">
       <div class="case-block reveal">
-        <div class="section-label">DAS PROBLEM</div>
-        <h2>Eine Beauty Brand ohne einen Shop der zur Marke passt.</h2>
-        <p>Vitara Skin hat hochwertige Beauty-Produkte, aber keinen Shop der dieses Qualitätsversprechen transportiert.</p>
-        <p>In der Beauty-Branche ist Ästhetik alles. Kunden kaufen nicht nur das Produkt, sie kaufen das Gefühl. Ein mittelmäßiger Shop bei Premium-Preisen? Das passt nicht.</p>
-        <p>Die Conversion-Rate war niedrig, die Kunden sind auf der Startseite abgesprungen.</p>
-        <p>Vergleichbare Brands in der gleichen Nische machen 200-400k€ monatlich, mit dem richtigen Shop.</p>
+        <div class="section-label">DIE AUSGANGSLAGE</div>
+        <h2>Eine Beauty Brand mit guten Produkten. Aber ohne Shop, ohne Marke, ohne System.</h2>
+        <p>Vitara Skin hatte Produkte die funktionieren. Was fehlte: alles andere. Kein Shop, kein Branding, keine Farben, kein Logo, nichts was sagt: das ist eine echte Marke.</p>
+        <p>Dazu kam: kein System dahinter. Kein Plan wie Bestellungen abgewickelt werden, kein Versand, keine Abläufe. Alles musste erst aufgebaut werden.</p>
+        <p>Gute Produkte allein reichen nicht. Ohne einen Shop der Vertrauen aufbaut und ohne eine Marke die man wiedererkennt, kauft niemand.</p>
       </div>
       <div class="case-block reveal reveal-delay-1">
-        <div class="section-label">DIE LÖSUNG</div>
-        <h2>Ein Premium Shopify Shop der die Marke verkörpert.</h2>
-        <p>Wir haben einen Shopify Shop gebaut der die Premiumqualität der Produkte widerspiegelt. Hochwertige Produktbilder, elegantes Design, eine Markenwelt die Vertrauen schafft.</p>
-        <p>Der Shop erzählt eine Geschichte, von der Startseite über die Produktseiten bis zum Checkout.</p>
-        <p>Jedes Element ist darauf optimiert den Besucher zum Käufer zu machen. Mobile-first, schnelle Ladezeiten, nahtloser Checkout.</p>
+        <div class="section-label">WAS WIR GEBAUT HABEN</div>
+        <h2>Einen komplett eigenen Shop. Jedes Detail genau so wie der Kunde es wollte.</h2>
+        <p>Wir haben den Shop von Grund auf gebaut. Nicht irgendeine Vorlage angepasst, sondern jeden Bereich einzeln gestaltet, genau nach den Wünschen des Kunden. Jede Seite, jeder Button, jede Farbe, alles abgestimmt.</p>
+        <p>Dann haben wir die gesamte Technik eingerichtet. Wenn ein Kunde bestellt, passiert alles automatisch: Bestellbestätigung raus, Versandlabel fertig zum Ausdrucken, Kunde bekommt seine Sendungsverfolgung. Der Inhaber muss nur noch das Paket packen und das Label draufkleben. Mehr nicht.</p>
+        <p>Dazu ein eigenes Dashboard wo der Kunde alle Bestellungen sieht, alle Kundendaten, alle Zahlen auf einen Blick.</p>
+        <p>Und das Wichtigste: Wir haben den Shop so gebaut dass Besucher fast keine andere Wahl haben als zu kaufen. Jedes Element auf der Seite ist dafür da Vertrauen aufzubauen und Zweifel zu nehmen. Bewertungen genau an der richtigen Stelle. Vorher-Nachher Bilder die das Ergebnis zeigen. Angebote die nur kurz gelten. Alles psychologisch durchdacht, aber so natürlich dass es nicht nach Verkauf riecht.</p>
+        <p>Und das komplette Branding obendrauf: Logo, Farben, Schriften, Verpackungsdesign. Alles aus einem Guss. Vom Instagram Post bis zum Paket das bei der Kundin ankommt.</p>
       </div>
     </div>
   </div>
@@ -132,16 +152,16 @@
     <div class="section-label">ERGEBNISSE</div>
     <div class="results-grid">
       <div class="result-card glass reveal">
-        <span class="result-number chrome-text">Premium</span>
-        <span class="result-label">Shopify Shop auf Brand-Niveau</span>
+        <span class="result-number chrome-text">100%</span>
+        <span class="result-label">Maßgeschneiderter Online Shop</span>
       </div>
       <div class="result-card glass reveal reveal-delay-1">
-        <span class="result-number chrome-text">200-400k€</span>
-        <span class="result-label">Potenzial vergleichbarer Shops/Monat</span>
+        <span class="result-number chrome-text">Auto</span>
+        <span class="result-label">Versandlabel, Mails, Tracking</span>
       </div>
       <div class="result-card glass reveal reveal-delay-2">
-        <span class="result-number chrome-text">Live</span>
-        <span class="result-label">Frisch gestartet, Ergebnisse kommen</span>
+        <span class="result-number chrome-text">Branding</span>
+        <span class="result-label">Komplett von Verpackung bis Website</span>
       </div>
     </div>
   </div>
@@ -171,7 +191,8 @@
       <a href="/#bewerbung" class="footer-cta">Erstgespräch sichern <span class="btn-arrow">→</span></a>
     </div>
     <div class="footer-legal">
-      © 2026 Jallous Webdesign · Cortex Made LLC · <a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">AGBs</a>
+      <span class="footer-copy">© 2026 Jallous Webdesign · Cortex Made LLC</span>
+      <span class="footer-links"><a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="../agb.html">AGBs</a></span>
     </div>
   </div>
 </footer>

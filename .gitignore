@@ -2,3 +2,6 @@
 __pycache__/
 generated-images/
 tools/.tmp/
+.env
+api/config.php
+api/data/

@@ -370,6 +370,7 @@
     display: flex;
     gap: 10px;
     width: max-content;
+    will-change: transform;
   }
 
   .marquee-left .marquee-track {
@@ -387,6 +388,7 @@
     flex-shrink: 0;
     object-fit: cover;
     aspect-ratio: 16/9;
+    content-visibility: auto;
   }
 
   @keyframes marqueeLeft {
@@ -508,15 +510,14 @@
   width: 280px;
   height: 340px;
   border-radius: var(--card-radius);
-  background: linear-gradient(135deg, var(--glass-bg), var(--glass-bg-hover));
-  border: 2px solid var(--glass-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-text p {
@@ -728,6 +729,11 @@
 
 .form-glass {
   padding: 3rem 2.5rem;
+  transition: padding 0.4s ease;
+}
+
+.form-glass.success-state {
+  padding: 2rem 2.5rem;
 }
 
 .form-intro {
@@ -849,11 +855,51 @@ select.form-input {
   user-select: none;
 }
 
-.form-option:hover,
-.form-option.selected {
+.form-option:hover {
   border-color: var(--glass-border-strong);
   color: var(--text-primary);
   background: var(--glass-bg-hover);
+}
+
+/* Chrome stroke on selected option */
+.form-option.selected {
+  color: var(--text-primary);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(rgba(245,243,239,0.95), rgba(245,243,239,0.95)) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #b0b0b0 0%, #d0d0d0 8%, #8a8a8a 16%, #555 24%,
+      #c0c0c0 32%, #d8d8d8 40%, #777 48%, #4a4a4a 56%,
+      #b5b5b5 64%, #d0d0d0 72%, #888 80%, #555 88%, #b0b0b0 100%
+    ) border-box;
+  animation: chrome-border-rotate 3s linear infinite;
+}
+
+[data-theme="dark"] .form-option.selected {
+  background:
+    linear-gradient(rgba(14,14,14,0.95), rgba(14,14,14,0.95)) padding-box,
+    conic-gradient(
+      from var(--chrome-angle),
+      #222 0%, #fafafa 8%, #444 16%, #888 24%,
+      #fafafa 32%, #333 40%, #aaa 48%, #fafafa 56%,
+      #555 64%, #ddd 72%, #333 80%, #fafafa 88%, #222 100%
+    ) border-box;
+  animation: chrome-border-rotate 3s linear infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .form-option.selected {
+    background:
+      linear-gradient(rgba(14,14,14,0.95), rgba(14,14,14,0.95)) padding-box,
+      conic-gradient(
+        from var(--chrome-angle),
+        #222 0%, #fafafa 8%, #444 16%, #888 24%,
+        #fafafa 32%, #333 40%, #aaa 48%, #fafafa 56%,
+        #555 64%, #ddd 72%, #333 80%, #fafafa 88%, #222 100%
+      ) border-box;
+    animation: chrome-border-rotate 3s linear infinite;
+  }
 }
 
 .form-option input {
@@ -921,6 +967,38 @@ select.form-input {
 }
 
 /* Website URL conditional field */
+/* Validation error states */
+.form-input.shake {
+  animation: form-shake 0.4s ease;
+  border-color: #c0392b;
+}
+
+.form-options.shake .form-option {
+  animation: form-shake 0.4s ease;
+}
+
+.form-error-msg {
+  font-size: 0.8rem;
+  color: #c0392b;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.form-error-msg.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes form-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
 .conditional-field {
   display: none;
   margin-top: 1rem;
@@ -934,7 +1012,9 @@ select.form-input {
 .form-success {
   display: none;
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .form-success.active {
@@ -944,15 +1024,98 @@ select.form-input {
 .form-success h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: successPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
 }
 
 .form-success p {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.7;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: successFadeUp 0.5s ease 0.6s forwards;
+}
+
+/* Success animation keyframes — must be before rules that use them */
+@keyframes successPop {
+  0% { opacity: 0; transform: scale(0.3); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes successFadeUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes checkDraw {
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Chrome checkmark circle — uses linear-gradient fallback for broad compat */
+.success-checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(rgba(245,243,239,0.95), rgba(245,243,239,0.95)) padding-box,
+    linear-gradient(135deg, #b0b0b0, #d8d8d8, #555, #c0c0c0, #888, #d0d0d0, #4a4a4a, #b0b0b0) border-box;
+  opacity: 0;
+  transform: scale(0.3);
+  animation: successPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+[data-theme="dark"] .success-checkmark {
+  background:
+    linear-gradient(rgba(14,14,14,0.95), rgba(14,14,14,0.95)) padding-box,
+    linear-gradient(135deg, #333, #fafafa, #555, #aaa, #fafafa, #444, #ddd, #333) border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .success-checkmark {
+    background:
+      linear-gradient(rgba(14,14,14,0.95), rgba(14,14,14,0.95)) padding-box,
+      linear-gradient(135deg, #333, #fafafa, #555, #aaa, #fafafa, #444, #ddd, #333) border-box;
+  }
+}
+
+.success-checkmark svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--text-primary);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: checkDraw 0.5s ease 0.3s forwards;
+}
+
+/* Confetti canvas */
+.confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.form-success h3,
+.form-success p,
+.form-success .success-checkmark {
+  position: relative;
+  z-index: 2;
 }
 
 /* ═══════════════════════════════════════════════
